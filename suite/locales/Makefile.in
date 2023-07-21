@@ -69,7 +69,7 @@ PP_TARGETS += SEARCH_PLUGINS
 
 include $(topsrcdir)/config/rules.mk
 
-include $(topsrcdir)/mozilla/toolkit/locales/l10n.mk
+include $(topsrcdir)/platform/toolkit/locales/l10n.mk
 
 $(STAGEDIST): $(DIST)/branding
 
@@ -210,7 +210,7 @@ merge-%:
 ifdef LOCALE_MERGEDIR
 	$(RM) -rf $(LOCALE_MERGEDIR)
 	$(MKDIR) -p $(LOCALE_MERGEDIR)
-	$(topsrcdir)/mozilla/mach compare-locales --merge-dir $(LOCALE_MERGEDIR) --l10n-ini $(srcdir)/l10n.ini $*
+	$(topsrcdir)/platform/mach compare-locales --merge-dir $(LOCALE_MERGEDIR) --l10n-ini $(srcdir)/l10n.ini $*
 endif
 	@echo
 

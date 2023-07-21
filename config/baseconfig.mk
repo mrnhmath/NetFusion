@@ -7,10 +7,10 @@
 # make -f topsrcdir/config/baseconfig.mk
 # The first word of MAKEFILE_LIST is the main file we're running. Grabbing the
 # parent of that directory therefore gets us the topsrcdir of comm-central,
-# whence we get the mozilla directory to run the "real" baseconfig.mk logic.
+# whence we get the platform directory to run the "real" baseconfig.mk logic.
 ifndef INCLUDED_AUTOCONF_MK
 topsrcdir := $(dir $(firstword $(MAKEFILE_LIST)))..
 endif
 
-MOZILLA_SRCDIR = $(topsrcdir)/mozilla
+MOZILLA_SRCDIR = $(topsrcdir)/platform
 include $(MOZILLA_SRCDIR)/config/baseconfig.mk

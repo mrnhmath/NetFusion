@@ -9,5 +9,5 @@ ifndef topsrcdir
 $(error topsrcdir was not set))
 endif
 
-# Use mozilla-central's copy of rules.mk.
-include $(topsrcdir)/mozilla/config/rules.mk
+# Use platform's copy of rules.mk.
+include $(topsrcdir)/platform/config/rules.mk
