@@ -82,6 +82,11 @@ function toBookmarksManager()
                      "chrome://communicator/content/bookmarks/bookmarksManager.xul");
 }
 
+function toJavaScriptConsole()
+{
+    toOpenWindowByType("global:console", "chrome://global/content/console.xul");
+}
+
 function toOpenWindow( aWindow )
 {
   try {

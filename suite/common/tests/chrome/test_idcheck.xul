@@ -271,6 +271,13 @@
             []
           ],
 
+        // Error Console
+        "chrome://global/content/console.xul":
+          [
+            window.CheckGenerics,
+            []
+          ],
+
         // Chatzilla
         "chrome://chatzilla/content/chatzilla.xul":
           [
