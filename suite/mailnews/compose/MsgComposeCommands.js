@@ -3509,7 +3509,7 @@ function getPref(aPrefName, aIsComplex)
 var gComposeNotificationBar = {
   get stringBundle() {
     delete this.stringBundle;
-    return this.stringBundle = document.getElementById("bundle_composeMsgsTB");
+    return this.stringBundle = document.getElementById("bundle_composeMsgs");
   },
 
   get notificationBar() {
@@ -3570,7 +3570,7 @@ var gComposeNotificationBar = {
 function onBlockedContentOptionsShowing(aEvent) {
   let urls = aEvent.target.value ? aEvent.target.value.split(" ") : [];
 
-  let composeBundle = document.getElementById("bundle_composeMsgsTB");
+  let composeBundle = document.getElementById("bundle_composeMsgs");
 
   // Out with the old...
   let childNodes = aEvent.target.childNodes;
