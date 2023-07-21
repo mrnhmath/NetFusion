@@ -65,12 +65,6 @@ function test() {
   ok(Application.version, "Check to see if a version exists for the Application");
 
   var wMediator = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
-  var console = wMediator.getMostRecentWindow("suite:console");
-  waitForExplicitFinish();
-  ok(!console, "Console should not already be open");
-
-  new WindowOpenListener("chrome://communicator/content/console/console.xul", consoleOpened, consoleClosed);
-  Application.console.open();
 }
 
 function consoleOpened(win) {

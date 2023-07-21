@@ -271,13 +271,6 @@
             []
           ],
 
-        // Error Console
-        "chrome://communicator/content/console/console.xul":
-          [
-            window.CheckGenerics,
-            []
-          ],
-
         // Chatzilla
         "chrome://chatzilla/content/chatzilla.xul":
           [
