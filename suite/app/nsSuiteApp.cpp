@@ -39,6 +39,7 @@
 
 #include "nsXPCOMPrivate.h" // for MAXPATHLEN and XPCOM_DLL
 
+#include "mozilla/StartupTimeline.h"
 #include "mozilla/WindowsDllBlocklist.h"
 
 #if !defined(MOZ_WIDGET_COCOA) && !defined(MOZ_WIDGET_ANDROID) \
