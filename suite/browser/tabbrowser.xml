@@ -2923,10 +2923,6 @@
                 readonly="true"
                 onget="return this.mCurrentBrowser.contentWindow"/>
 
-      <property name="contentWindowAsCPOW"
-                readonly="true"
-                onget="return this.mCurrentBrowser.contentWindowAsCPOW"/>
-
       <property name="sessionHistory"
                 onget="return this.mCurrentBrowser.sessionHistory;"
                 readonly="true"/>

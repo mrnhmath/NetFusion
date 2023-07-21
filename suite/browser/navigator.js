@@ -2021,10 +2021,8 @@ function readFromClipboard()
  * Open the View Source dialog.
  *
  * @param aArgsOrDocument
- *        Either an object or a Document. Passing a Document is deprecated,
- *        and is not supported with e10s. This function will throw if
- *        aArgsOrDocument is a CPOW.
- *
+ *        Either an object or a Document.
+*
  *        If aArgsOrDocument is an object, that object can take the
  *        following properties:
  *
@@ -2043,11 +2041,6 @@ function readFromClipboard()
  */
 function BrowserViewSourceOfDocument(aArgsOrDocument) {
   if (aArgsOrDocument instanceof Document) {
-    // Deprecated API - callers should pass args object instead.
-    if (Components.utils.isCrossProcessWrapper(aArgsOrDocument)) {
-      throw new Error("BrowserViewSourceOfDocument cannot accept a CPOW " +
-                      "as a document.");
-    }
 
     let requestor = aArgsOrDocument.defaultView
                                    .QueryInterface(Components.interfaces.nsIInterfaceRequestor);

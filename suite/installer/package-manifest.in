@@ -402,8 +402,6 @@
 @RESPATH@/components/messageWakeupService.manifest
 @RESPATH@/components/mozProtocolHandler.js
 @RESPATH@/components/mozProtocolHandler.manifest
-@RESPATH@/components/multiprocessShims.js
-@RESPATH@/components/addoncompat.manifest
 @RESPATH@/components/utils.manifest
 @RESPATH@/components/simpleServices.js
 @RESPATH@/components/NetworkGeolocationProvider.js
@@ -720,21 +718,6 @@
 @RESPATH@/chrome/pippki.manifest
 @RESPATH@/components/pipnss.xpt
 @RESPATH@/components/pippki.xpt
-
-; For process sandboxing
-#if defined(MOZ_SANDBOX)
-#if defined(XP_WIN)
-#if defined(WOW_HELPER)
-@BINPATH@/wow_helper.exe
-#endif
-#endif
-#endif
-
-#if defined(MOZ_SANDBOX)
-#if defined(XP_LINUX)
-@BINPATH@/@DLL_PREFIX@mozsandbox@DLL_SUFFIX@
-#endif
-#endif
 
 ; for Solaris SPARC
 #ifdef SOLARIS
