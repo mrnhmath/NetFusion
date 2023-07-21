@@ -41,8 +41,9 @@ MOZ_PROFILE_MIGRATOR=1
 MOZ_APP_STATIC_INI=1
 MOZ_SEPARATE_MANIFEST_FOR_THEME_OVERRIDES=1
 
-if test "$OS_ARCH" = "WINNT" -o \
-        "$OS_ARCH" = "Linux"; then
+if test "$MOZ_WIDGET_TOOLKIT" = "windows" -o \
+        "$MOZ_WIDGET_TOOLKIT" = "gtk2" -o \
+        "$MOZ_WIDGET_TOOLKIT" = "gtk3"; then
   MOZ_BUNDLED_FONTS=1
 fi
 
