@@ -8,7 +8,6 @@
 #define en_US en-US
 
 @AB_CD@.jar:
-% locale branding @AB_CD@ %locale/@AB_CD@/branding/
 % locale communicator @AB_CD@ %locale/@AB_CD@/communicator/
 % locale communicator-platform @AB_CD@ %locale/@AB_CD@/communicator-platform/
 % locale communicator-region @AB_CD@ %locale/@AB_CD@/communicator-region/
@@ -23,10 +22,6 @@
 % locale navigator-platform @AB_CD@ %locale/@AB_CD@/navigator-platform/
 % locale navigator-region @AB_CD@ %locale/@AB_CD@/navigator-region/
 % override chrome://global/locale/notification.dtd chrome://communicator/locale/notification.dtd
-  locale/@AB_CD@/branding/brand.dtd                                         (%chrome/branding/brand.dtd)
-  locale/@AB_CD@/branding/brand.properties                                  (%chrome/branding/brand.properties)
-  locale/@AB_CD@/branding/aboutRights.dtd                                   (%chrome/branding/aboutRights.dtd)
-  locale/@AB_CD@/branding/aboutRights.properties                            (%chrome/branding/aboutRights.properties)
   locale/@AB_CD@/communicator/askViewZoom.dtd                               (%chrome/common/askViewZoom.dtd)
   locale/@AB_CD@/communicator/certError.dtd                                 (%chrome/common/certError.dtd)
   locale/@AB_CD@/communicator/consoleOverlay.dtd                            (%chrome/common/consoleOverlay.dtd)
