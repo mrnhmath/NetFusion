@@ -6,7 +6,6 @@
   ; If no extensions are available skip the components page
   ${Unless} ${FileExists} "$EXEDIR\optional\distribution\extensions\{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}.xpi"
   ${AndUnless} ${FileExists} "$EXEDIR\optional\distribution\extensions\inspector@mozilla.org.xpi"
-  ${AndUnless} ${FileExists} "$EXEDIR\optional\distribution\extensions\debugQA@mozilla.org.xpi"
   ${AndUnless} ${FileExists} "$EXEDIR\optional\distribution\extensions\{f13b157f-b174-47e7-a34d-4815ddfdfeb8}.xpi"
     Abort
   ${EndUnless}
@@ -71,25 +70,6 @@
     SectionSetText ${DOMI_IDX} ""
   ${EndIf}
 
-  ${If} ${FileExists} "$EXEDIR\optional\distribution\extensions\debugQA@mozilla.org.xpi"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Type   "checkbox"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Text   "$(DEBUGQA_TITLE)"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Left   "15"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Right  "-1"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Top    "$R2"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Bottom "$R3"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" State  "1"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Flags  "GROUP"
-    ${GetSize} "$EXEDIR\optional\distribution\extensions\debugQA@mozilla.org.xpi" "/S=0K" $0 $8 $9
-    SectionSetSize ${DEBUG_IDX} $0
-    IntOp $R1 $R1 + 1
-    IntOp $R2 $R2 + $R4
-    IntOp $R3 $R3 + $R4
-  ${Else}
-    ; Hide debugQA in the components page if it isn't available.
-    SectionSetText ${DEBUG_IDX} ""
-  ${EndIf}
-
   ; Set new values for the top and bottom of labels
   ; Top of label box
   StrCpy $R2 27
@@ -111,18 +91,6 @@
   ${If} ${FileExists} "$EXEDIR\optional\distribution\extensions\inspector@mozilla.org.xpi"
     WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Type   "label"
     WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Text   "$(DOMI_TEXT)"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Left   "30"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Right  "-1"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Top    "$R2"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Bottom "$R3"
-    IntOp $R1 $R1 + 1
-    IntOp $R2 $R2 + $R4
-    IntOp $R3 $R3 + $R4
-  ${EndIf}
-
-  ${If} ${FileExists} "$EXEDIR\optional\distribution\extensions\debugQA@mozilla.org.xpi"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Type   "label"
-    WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Text   "$(DEBUGQA_TEXT)"
     WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Left   "30"
     WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Right  "-1"
     WriteINIStr "$PLUGINSDIR\components.ini" "Field $R1" Top    "$R2"

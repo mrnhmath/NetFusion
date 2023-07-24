@@ -18,8 +18,6 @@
 @DIR_MACOS@.autoreg
 @DIR_MACOS@chrome/app-chrome.manifest
 @DIR_MACOS@chrome/chatzilla.jar
-@DIR_MACOS@chrome/debugqa.jar
-@DIR_MACOS@chrome/debugqa.manifest
 @DIR_MACOS@chrome/classic.manifest
 @DIR_MACOS@chrome/comm.manifest
 @DIR_MACOS@chrome/be.manifest
@@ -756,12 +754,6 @@ Throbber-small.gif
   @DIR_MACOS@extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components/venkman-service.js
   @DIR_MACOS@extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/install.rdf
   @DIR_MACOS@extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}.xpi
-  @DIR_MACOS@extensions/debugQA@mozilla.org/
-  @DIR_MACOS@extensions/debugQA@mozilla.org/install.rdf
-  @DIR_MACOS@extensions/debugQA@mozilla.org/chrome.manifest
-  @DIR_MACOS@extensions/debugQA@mozilla.org/chrome/
-  @DIR_MACOS@extensions/debugQA@mozilla.org/chrome/debugqa.jar
-  @DIR_MACOS@extensions/debugQA@mozilla.org.xpi
   @DIR_MACOS@extensions/inspector@mozilla.org/
   @DIR_MACOS@extensions/inspector@mozilla.org/install.rdf
   @DIR_MACOS@extensions/inspector@mozilla.org/chrome.manifest

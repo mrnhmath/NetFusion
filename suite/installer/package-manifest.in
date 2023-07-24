@@ -928,14 +928,3 @@ bin/libfreebl_32int64_3.so
 @RESPATH@/extensions/inspector@mozilla.org/components/inspector-cmdline.js
 @RESPATH@/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
 #endif
-
-[debugqa]
-#ifdef MOZ_PACKAGE_DEBUGQA
-#ifdef MOZ_OMNIJAR
-@RESPATH@/distribution/extensions/debugQA@mozilla.org.xpi
-#else
-@RESPATH@/extensions/debugQA@mozilla.org/install.rdf
-@RESPATH@/extensions/debugQA@mozilla.org/chrome.manifest
-@RESPATH@/extensions/debugQA@mozilla.org/chrome/debugqa@JAREXT@
-#endif
-#endif
