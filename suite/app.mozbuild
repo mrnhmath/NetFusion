@@ -9,7 +9,7 @@ if CONFIG['MOZ_EXTENSIONS']:
     DIRS += ['/extensions']
 
 if CONFIG['MOZ_COMPOSER']:
-    DIRS += ['/editor/ui']
+    DIRS += ['/suite/editor/ui']
 
 DIRS += ['/%s' % CONFIG['MOZ_BRANDING_DIRECTORY']]
 
