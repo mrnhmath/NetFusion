@@ -48,3 +48,6 @@ fi
 
 # Include the DevTools client, not just the server (which is the default)
 MOZ_DEVTOOLS=all
+
+# Short-circuit Sync
+MOZ_SERVICES_SYNC=
