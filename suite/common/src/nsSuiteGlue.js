@@ -104,28 +104,6 @@ SuiteGlue.prototype = {
     }
   },
 
-  _setSyncAutoconnectDelay: function BG__setSyncAutoconnectDelay() {
-    // Assume that a non-zero value for services.sync.autoconnectDelay should override
-    if (Services.prefs.prefHasUserValue("services.sync.autoconnectDelay")) {
-      let prefDelay = Services.prefs.getIntPref("services.sync.autoconnectDelay");
-
-      if (prefDelay > 0)
-        return;
-    }
-
-    // delays are in seconds
-    const MAX_DELAY = 300;
-    let delay = 3;
-    let browserEnum = Services.wm.getEnumerator("navigator:browser");
-    while (browserEnum.hasMoreElements()) {
-      delay += browserEnum.getNext().gBrowser.tabs.length;
-    }
-    delay = delay <= MAX_DELAY ? delay : MAX_DELAY;
-
-    Components.utils.import("resource://services-sync/main.js");
-    Weave.Service.scheduler.delayedAutoConnect(delay);
-  },
-
   // nsIObserver implementation
   observe: function(subject, topic, data)
   {
@@ -203,12 +181,6 @@ SuiteGlue.prototype = {
       case "console-api-log-event":
         if (Services.prefs.getBoolPref("browser.dom.window.console.enabled"))
           this._logConsoleAPI(subject.wrappedJSObject);
-        break;
-      case "weave:service:ready":
-        this._setSyncAutoconnectDelay();
-        break;
-      case "weave:engine:clients:display-uri":
-        this._onDisplaySyncURI(subject);
         break;
       case "session-save":
         this._setPrefToSaveSession();
@@ -326,8 +298,6 @@ SuiteGlue.prototype = {
     Services.obs.addObserver(this, "browser-lastwindow-close-requested", true);
     Services.obs.addObserver(this, "browser-lastwindow-close-granted", true);
     Services.obs.addObserver(this, "console-api-log-event", true);
-    Services.obs.addObserver(this, "weave:service:ready", true);
-    Services.obs.addObserver(this, "weave:engine:clients:display-uri", true);
     Services.obs.addObserver(this, "session-save", true);
     Services.obs.addObserver(this, "dl-done", true);
     Services.obs.addObserver(this, "places-init-complete", true);

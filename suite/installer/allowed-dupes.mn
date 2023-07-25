@@ -64,14 +64,10 @@ extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/side
 chrome/classic/skin/classic/communicator/sidebar/sidebarListView.css
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/editor/icons/progress-busy.gif
 chrome/classic/skin/classic/editor/icons/progress-busy.gif
-extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/sync/sync-desktopIcon.png
-chrome/classic/skin/classic/communicator/sync/sync-desktopIcon.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/dialogs.css
 chrome/classic/skin/classic/communicator/dialogs.css
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/messenger/addressbook/sidebarPanel.css
 chrome/classic/skin/classic/messenger/addressbook/sidebarPanel.css
-extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/sync/sync-mobileIcon.png
-chrome/classic/skin/classic/communicator/sync/sync-mobileIcon.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/messenger/smime/msgCompSecurityInfo.css
 chrome/classic/skin/classic/messenger/smime/msgCompSecurityInfo.css
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/dataman/datamanIcon-16.png
@@ -197,8 +193,6 @@ extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/mozapps/extension
 chrome/toolkit/skin/classic/mozapps/extensions/rating-won.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/mozapps/plugins/contentPluginCrashed.png
 chrome/toolkit/skin/classic/mozapps/plugins/contentPluginCrashed.png
-extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/sync/sync-16.png
-chrome/classic/skin/classic/communicator/sync/sync-16.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/navigator/click-to-play-warning-stripes.png
 chrome/classic/skin/classic/navigator/click-to-play-warning-stripes.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/mozapps/extensions/category-recent.png
@@ -226,8 +220,6 @@ extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/mozapps/extension
 chrome/toolkit/skin/classic/mozapps/extensions/localeGeneric-XP.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/mozapps/extensions/heart.png
 chrome/toolkit/skin/classic/mozapps/extensions/heart.png
-extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/sync/sync-32.png
-chrome/classic/skin/classic/communicator/sync/sync-32.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/global/icons/autoscroll.png
 chrome/toolkit/skin/classic/global/icons/autoscroll.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/icons/notification-64.png
@@ -239,8 +231,6 @@ chrome/toolkit/skin/classic/global/icons/sslWarning-XP.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/messenger/addressbook/icons/contact-generic.png
 chrome/classic/skin/classic/messenger/addressbook/icons/contact-generic.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/global/media/clicktoplay-bgtexture.png
-extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/sync/sync-16-throbber.png
-chrome/classic/skin/classic/communicator/sync/sync-16-throbber.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/global/media/error.png
 chrome/toolkit/skin/classic/global/media/error.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/navigator/icons/identity.png
@@ -253,12 +243,8 @@ extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/icon
 chrome/classic/skin/classic/communicator/icons/connecting.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/global/media/stalled.png
 chrome/toolkit/skin/classic/global/media/stalled.png
-extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/sync/sync-bg.png
-chrome/classic/skin/classic/communicator/sync/sync-bg.png
 chrome/icons/default/html-file.ico
 chrome/icons/default/misc-file.ico
-extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/sync/sync-32-throbber.png
-chrome/classic/skin/classic/communicator/sync/sync-32-throbber.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/brand/throbber16-anim.png
 chrome/classic/skin/classic/communicator/brand/throbber16-anim.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/global/media/throbber.png

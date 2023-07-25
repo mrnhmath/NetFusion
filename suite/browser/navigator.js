@@ -771,9 +771,6 @@ function Startup()
   if (!gPrivate) {
     DownloadTaskbarProgress.onBrowserWindowLoad(window);
 
-    // initialize the sync UI
-    gSyncUI.init();
-
     // initialize the session-restore service
     setTimeout(InitSessionStoreCallback, 0);
   }
@@ -1530,11 +1527,6 @@ function BrowserOpenTab()
     else
       setTimeout(WindowFocusTimerCallback, 0, content);
   }
-}
-
-function BrowserOpenSyncTabs()
-{
-  switchToTabHavingURI("about:sync-tabs", true);
 }
 
 /* Show file picker dialog configured for opening a file, and return

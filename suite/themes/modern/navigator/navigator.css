@@ -107,21 +107,6 @@ toolbox {
   -moz-image-region: rect(156px 168px 195px 126px) !important;
 }
 
-#sync-button {
-  list-style-image: url("chrome://communicator/skin/sync/sync-32.png");
-}
-
-#sync-button > .toolbarbutton-icon {
-  margin-top: 5px;
-  margin-bottom: 4px;
-  margin-inline-start: 5px;
-  margin-inline-end: 7px;
-}
-
-#sync-button[status=active] {
-  list-style-image: url("chrome://communicator/skin/sync/sync-32-throbber.png");
-}
-
 /* ::::: small primary toolbar buttons ::::: */
 
 toolbar[iconsize="small"] > toolbarpaletteitem > #back-button,
@@ -212,24 +197,6 @@ toolbar[iconsize="small"] > #home-button:hover:active {
 
 toolbar[iconsize="small"] > #home-button[disabled="true"] {
   -moz-image-region: rect(76px 76px 95px 57px) !important;
-}
-
-toolbar[iconsize="small"] > toolbarpaletteitem > #sync-button,
-toolbar[iconsize="small"] > #sync-button {
-  list-style-image: url("chrome://communicator/skin/sync/sync-16.png");
-}
-
-toolbar[iconsize="small"] > toolbarpaletteitem > #sync-button > .toolbarbutton-icon,
-toolbar[iconsize="small"] > #sync-button > .toolbarbutton-icon {
-  margin-top: 2px;
-  margin-bottom: 3px;
-  margin-inline-start: 3px;
-  margin-inline-end: 5px;
-}
-
-toolbar[iconsize="small"] > toolbarpaletteitem > #sync-button[status=active],
-toolbar[iconsize="small"] > #sync-button[status=active] {
-  list-style-image: url("chrome://communicator/skin/sync/sync-16-throbber.png");
 }
 
 #nav-bar[iconsize="small"] {

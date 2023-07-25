@@ -144,16 +144,6 @@ statusbar[lwthemefooter="true"] {
   background-position: bottom left;
 }
 
-/******* sync *******/
-#sync-notifications {
-  -moz-binding: url("chrome://communicator/content/sync/syncNotification.xml#notificationbox");
-  overflow-y: visible !important;
-}
-
-#sync-notifications > notification {
-  -moz-binding: url("chrome://communicator/content/sync/syncNotification.xml#notification");
-}
-
 /******* autohide toolbars *******/
 
 toolbar[type="menubar"][autohide="true"]

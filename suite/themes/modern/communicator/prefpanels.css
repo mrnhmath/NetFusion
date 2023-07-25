@@ -113,9 +113,3 @@ checkbox.nogray-disabled[disabled="true"][nogray="true"]
   height: 16px;
   width: 16px;
 }
-
-/* ::::: Sync ::::: */
-
-#syncDesc {
-  padding: 0 12em;
-}

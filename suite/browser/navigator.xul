@@ -473,10 +473,7 @@
           </hbox>
         </hbox>
       </toolbaritem>
-
-      <!-- see utilityOverlay.xul -->
-      <toolbarbutton id="sync-button"/>
-    </toolbarpalette>
+   </toolbarpalette>
   </toolbox>
 
   <hbox flex="1">

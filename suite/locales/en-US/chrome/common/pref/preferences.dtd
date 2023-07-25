@@ -32,8 +32,6 @@
 <!ENTITY ssltls.label "SSL/TLS">
 <!ENTITY certs.label "Certificates">
 
-<!ENTITY sync.label "Sync">
-
 <!ENTITY advance.label "Advanced">
 <!ENTITY scriptsAndWindows.label "Scripts &amp; Plugins">
 <!ENTITY keynav.label "Keyboard Navigation">
