@@ -178,8 +178,6 @@ extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/icon
 chrome/classic/skin/classic/communicator/icons/smileys/smiley-cry.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/messenger/icons/junk.png
 chrome/classic/skin/classic/messenger/icons/junk.png
-modules/devtools/client/framework/gDevTools.jsm
-modules/devtools/gDevTools.jsm
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/mozapps/extensions/rating-not-won.png
 chrome/toolkit/skin/classic/mozapps/extensions/rating-not-won.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/mozapps/extensions/category-extensions.png
@@ -203,8 +201,6 @@ extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/mozapps/extension
 chrome/toolkit/skin/classic/mozapps/extensions/category-available-XP.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/messenger/icons/new-mail-alert.png
 chrome/classic/skin/classic/messenger/icons/new-mail-alert.png
-extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/navigator/webDeveloper.css
-chrome/classic/skin/classic/navigator/webDeveloper.css
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/icons/audioFeedIcon.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/icons/feedIcon.png
 extensions/modern@themes.mozilla.org/chrome/modern/skin/modern/communicator/icons/videoFeedIcon.png

@@ -41,12 +41,6 @@ XPCOMUtils.defineLazyModuleGetter(this, "Task",
 XPCOMUtils.defineLazyModuleGetter(this, "AppConstants",
                                   "resource://gre/modules/AppConstants.jsm");
 
-XPCOMUtils.defineLazyGetter(this, "DebuggerServer", () => {
-  var tmp = {};
-  Components.utils.import("resource://devtools/shared/Loader.jsm", tmp);
-  return tmp.require("devtools/server/main").DebuggerServer;
-});
-
 // We try to backup bookmarks at idle times, to avoid doing that at shutdown.
 // Number of idle seconds before trying to backup bookmarks.  15 minutes.
 const BOOKMARKS_BACKUP_IDLE_TIME = 15 * 60;
@@ -54,11 +48,6 @@ const BOOKMARKS_BACKUP_IDLE_TIME = 15 * 60;
 const BOOKMARKS_BACKUP_INTERVAL = 86400 * 1000;
 // Maximum number of backups to create.  Old ones will be purged.
 const BOOKMARKS_BACKUP_MAX_BACKUPS = 10;
-// Devtools Preferences
-const DEBUGGER_REMOTE_ENABLED = "devtools.debugger.remote-enabled";
-const DEBUGGER_REMOTE_PORT = "devtools.debugger.remote-port";
-const DEBUGGER_FORCE_LOCAL = "devtools.debugger.force-local";
-const DEBUGGER_WIFI_VISIBLE = "devtools.remote.wifi.visible";
 
 // Constructor
 
@@ -305,7 +294,6 @@ SuiteGlue.prototype = {
     Services.obs.addObserver(this, "places-shutdown", true);
     Services.obs.addObserver(this, "browser-search-engine-modified", true);
     Services.obs.addObserver(this, "notifications-open-settings", true);
-    Services.prefs.addObserver("devtools.debugger.", this, true);
     Services.obs.addObserver(this, "handle-xul-text-link", true);
     Components.classes['@mozilla.org/docloaderservice;1']
               .getService(Components.interfaces.nsIWebProgress)
@@ -1141,51 +1129,6 @@ SuiteGlue.prototype = {
       Services.prefs.setBoolPref("browser.download.progress.closeWhenDone",
                                  !Services.prefs.getBoolPref("browser.download.progressDnldDialog.keepAlive"));
     } catch (ex) {}
-  },
-
-  /**
-   * Devtools Debugger
-   */
-  get dbgIsEnabled()
-  {
-    return Services.prefs.getBoolPref(DEBUGGER_REMOTE_ENABLED);
-  },
-
-  dbgStart: function()
-  {
-    var port = Services.prefs.getIntPref(DEBUGGER_REMOTE_PORT);
-
-    // Make sure chrome debugging is enabled, no sense in starting otherwise.
-    DebuggerServer.allowChromeProcess = true;
-
-    if (!DebuggerServer.initialized) {
-      DebuggerServer.init();
-      DebuggerServer.addBrowserActors();
-    }
-    try {
-      let listener = DebuggerServer.createListener();
-      listener.portOrPath = port;
-
-      // Expose this listener via wifi discovery, if enabled.
-      if (Services.prefs.getBoolPref(DEBUGGER_WIFI_VISIBLE) &&
-          !Services.prefs.getBoolPref(DEBUGGER_FORCE_LOCAL)) {
-        listener.discoverable = true;
-      }
-
-      listener.open();
-    } catch(e) {}
-  },
-
-  dbgStop: function()
-  {
-    if (DebuggerServer.initialized)
-      DebuggerServer.closeAllListeners();
-  },
-
-  dbgRestart: function()
-  {
-    this.dbgStop();
-    this.dbgStart();
   },
 
   // ------------------------------

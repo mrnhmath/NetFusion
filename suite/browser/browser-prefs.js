@@ -825,13 +825,6 @@ pref("browser.rights.override", true);
 // Enable the DOM fullscreen API.
 pref("full-screen-api.enabled", true);
 
-// Most DevTools prefs are set from the shared file
-// devtools/client/preferences/devtools.js, but this one is currently set
-// per-app or per-channel.
-// Number of usages of the web console or scratchpad. If this is less than 5,
-// then pasting code into the web console or scratchpad is disabled
-pref("devtools.selfxss.count", 5);
-
 // Enable general plugin loading.
 pref("plugin.load_flash_only", false);
 

@@ -382,8 +382,6 @@
 @RESPATH@/components/contentAreaDropListener.manifest
 @RESPATH@/components/crypto-SDR.js
 @RESPATH@/components/cryptoComponents.manifest
-@RESPATH@/components/devtools-startup.manifest
-@RESPATH@/components/devtools-startup.js
 @RESPATH@/components/Downloads.manifest
 @RESPATH@/components/DownloadLegacy.js
 @RESPATH@/components/FeedConverter.js
@@ -544,11 +542,6 @@
 @RESPATH@/chrome/webide@JAREXT@
 @RESPATH@/chrome/webide.manifest
 @RESPATH@/@PREF_DIR@/webide-prefs.js
-
-; DevTools
-@RESPATH@/chrome/devtools@JAREXT@
-@RESPATH@/chrome/devtools.manifest
-@RESPATH@/@PREF_DIR@/devtools.js
 
 ; classic theme
 @RESPATH@/chrome/classic@JAREXT@

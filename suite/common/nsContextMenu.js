@@ -220,11 +220,6 @@ nsContextMenu.prototype = {
     this.showItem("context-viewsource", showView);
     this.showItem("context-viewinfo", showView);
 
-    var showInspect = "gDevTools" in window &&
-                      Services.prefs.getBoolPref("devtools.inspector.enabled");
-    this.showItem("inspect-separator", showInspect);
-    this.showItem("context-inspect", showInspect);
-
     this.showItem("context-sep-properties",
                   !(this.inDirList || this.isContentSelected || this.onTextInput ||
                     this.onCanvas || this.onVideo || this.onAudio));
@@ -482,30 +477,6 @@ nsContextMenu.prototype = {
       }
     }
     this.showItem("context-media-sep-commands", onMedia);
-  },
-
-  inspectNode: function() {
-    let tmp = {};
-    Components.utils.import("resource://devtools/shared/Loader.jsm", tmp);
-    let gBrowser = this.browser.ownerDocument.defaultView.gBrowser;
-    let tt = tmp.devtools.TargetFactory.forTab(gBrowser.selectedTab);
-    return gDevTools.showToolbox(tt, "inspector").then(toolbox => {
-      let inspector = toolbox.getCurrentPanel();
-      // new-node-front tells us when the node has been selected, whether the
-      // browser is remote or not.
-      let onNewNode = inspector.selection.once("new-node-front");
-
-      this.browser.messageManager.sendAsyncMessage("debug:inspect", {}, {node: this.target});
-      inspector.walker.findInspectingNode().then(nodeFront => {
-        inspector.selection.setNodeFront(nodeFront, "browser-context-menu");
-      });
-
-      return onNewNode.then(() => {
-        // Now that the node has been selected, wait until the inspector is
-        // fully updated.
-        return inspector.once("inspector-updated");
-      });
-    });
   },
 
   // Set various context menu attributes based on the state of the world.
