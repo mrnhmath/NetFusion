@@ -1149,41 +1149,6 @@ function BrowserOnCommand(event)
       getMeOutOfHere();
     }
   }
-  else if (docURI.startsWith("about:blocked")) {
-    // The event came from a button on a malware/phishing block page
-    // First check whether the reason, so that we can
-    // use the right strings/links
-    let reason = "phishing";
-
-    if (/e=malwareBlocked/.test(docURI)) {
-      reason = "malware";
-    } else if (/e=unwantedBlocked/.test(docURI)) {
-      reason = "unwanted";
-    }
-
-    switch (buttonID) {
-      case "getMeOutOfHereButton":
-        getMeOutOfHere();
-        break;
-
-      case "reportButton":
-        // This is the "Why is this site blocked" button. We redirect
-        // to the generic page describing phishing/malware protection.
-        try {
-          loadURI(Services.urlFormatter.formatURLPref("browser.safebrowsing.warning.infoURL"));
-        } catch (e) {
-          Components.utils.reportError("Couldn't get phishing info URL: " + e);
-        }
-        break;
-
-      case "ignoreWarningButton":
-        if (Services.prefs.getBoolPref("browser.safebrowsing.allowOverride")) {
-          getBrowser().getNotificationBox().ignoreSafeBrowsingWarning(reason);
-        }
-        break;
-
-    }
-  }
 }
 
 /**

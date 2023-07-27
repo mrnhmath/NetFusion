@@ -400,17 +400,7 @@ SuiteGlue.prototype = {
       }
     }
 
-    // Migration of disabled safebrowsing-phishing setting after pref renaming.
-    if (currentUIVersion < 2) {
-      try {
-        if (!Services.prefs.getBoolPref("browser.safebrowsing.enabled")) {
-          Services.prefs.setBoolPref("browser.safebrowsing.phishing.enabled", false);
-          Services.prefs.clearUserPref("browser.safebrowsing.enabled");
-        }
-      } catch (ex) {}
-    }
-
-    // Update the migration version.
+   // Update the migration version.
     Services.prefs.setIntPref("suite.migration.version", UI_VERSION);
   },
 
