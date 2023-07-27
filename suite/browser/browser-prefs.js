@@ -324,7 +324,6 @@ pref("toolkit.zoomManager.zoomValues", "0.2,0.3,0.5,0.67,0.8,0.9,1,1.1,1.2,1.33,
 pref("javascript.options.showInConsole",    true);
 
 pref("suite.manager.addons.openAsDialog", false);
-pref("suite.manager.dataman.openAsDialog", true);
 
 pref("offline.startup_state",            0);
 pref("offline.send.unsent_messages",            0);

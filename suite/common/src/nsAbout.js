@@ -16,8 +16,6 @@ About.prototype = {
   URI: "chrome://communicator/content/about.xhtml",
   certerrorFlags: SCRIPT | UNTRUSTED | HIDE,
   certerrorURI: "chrome://communicator/content/certError.xhtml",
-  dataFlags: SCRIPT,
-  dataURI: "chrome://communicator/content/dataman/dataman.xul",
   feedsFlags: SCRIPT | UNTRUSTED | HIDE,
   feedsURI: "chrome://communicator/content/feeds/subscribe.xhtml",
   lifeFlags: SCRIPT | UNTRUSTED | HIDE,

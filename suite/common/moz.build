@@ -9,7 +9,6 @@ DIRS += [
 ]
 
 BROWSER_CHROME_MANIFESTS += [
-    'dataman/tests/browser.ini',
     'downloads/tests/browser/browser.ini',
     'places/tests/browser/browser.ini',
     'tests/browser/browser.ini',

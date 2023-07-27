@@ -39,24 +39,6 @@ function toDownloadManager()
   }
 }
 
-function toDataManager(aView)
-{
-  var useDlg = Services.prefs.getBoolPref("suite.manager.dataman.openAsDialog");
-
-  if (useDlg) {
-    var url = "chrome://communicator/content/dataman/dataman.xul";
-    var win = toOpenWindowByType("data:manager", url, "", aView);
-    if (win && aView)
-      win.gDataman.loadView(aView);
-    return;
-  }
-
-  switchToTabHavingURI("about:data", true, function(browser) {
-    if (aView)
-      browser.contentWindow.wrappedJSObject.gDataman.loadView(aView);
-  });
-}
-
 function toEM(aView)
 {
   var useDlg = Services.prefs.getBoolPref("suite.manager.addons.openAsDialog");

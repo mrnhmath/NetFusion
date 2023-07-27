@@ -33,10 +33,6 @@
       <!-- Tasks Menu -->
       <menu id="tasksMenu" label="&tasksMenu.label;" accesskey="&tasksMenu.accesskey;">
         <menupopup id="taskPopup">
-          <menuitem id="tasksDataman"
-                    label="&datamanCmd.label;"
-                    accesskey="&datamanCmd.accesskey;"
-                    command="Tasks:DataMan"/>
           <menu id="menu_passwordManager"
                 label="&passwordManagerCmd.label;"
                 accesskey="&passwordManagerCmd.accesskey;">
