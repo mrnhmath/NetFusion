@@ -27,6 +27,7 @@
 
   <script type="application/javascript" src="chrome://communicator/content/pref/preferences.js"/>
   <!-- Used by pref-smartupdate, pref-privatedata, pref-cookies, pref-images, pref-popups and pref-passwords -->
+  <script type="application/javascript" src="chrome://communicator/content/permissions/permissionsOverlay.js"/>
   <script type="application/javascript" src="chrome://communicator/content/utilityOverlay.js"/>
   <script type="application/javascript" src="chrome://communicator/content/tasksOverlay.js"/>
 

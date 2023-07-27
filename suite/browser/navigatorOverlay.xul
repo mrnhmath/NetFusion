@@ -31,6 +31,10 @@
   <script type="application/javascript"
           src="chrome://navigator/content/navigator.js"/>
 
+  <!-- Permissions Overlay -->
+  <script type="application/javascript"
+          src="chrome://communicator/content/permissions/permissionsOverlay.js"/>
+
   <!-- Places Bookmarks Utilities -->
   <script type="application/javascript"
           src="chrome://communicator/content/places/browserPlacesViews.js"/>
