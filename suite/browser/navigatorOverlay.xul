@@ -564,7 +564,7 @@
             <menuitem id="menuitem_cookieDisplay"
                       label="&cookieDisplayCookiesCmd.label;"
                       accesskey="&cookieDisplayCookiesCmd.accesskey;"
-                      oncommand="toDataManager(hostUrl() + '|cookies');
+                      oncommand="viewCookies(hostUrl());
                                  event.stopPropagation();"/>
           </menupopup>
         </menu>
@@ -600,7 +600,7 @@
             <menuitem id="menuitem_imageDisplay"
                       label="&cookieDisplayImagesCmd.label;"
                       accesskey="&cookieDisplayImagesCmd.accesskey;"
-                      oncommand="toDataManager(hostUrl() + '|permissions|add|image');
+                      oncommand="viewImages(hostUrl());
                                  event.stopPropagation();"/>
           </menupopup>
         </menu>
@@ -637,7 +637,7 @@
             <menuitem id="menuitem_PopupsManage"
                       label="&popupsManage.label;"
                       accesskey="&popupsManage.accesskey;"
-                      oncommand="toDataManager(hostUrl() + '|permissions|add|popup');
+                      oncommand="viewPopups(hostUrl());
                                  event.stopPropagation();"
                       hidden="true"/>
           </menupopup>

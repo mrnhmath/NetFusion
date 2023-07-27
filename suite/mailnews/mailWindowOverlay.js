@@ -2813,15 +2813,15 @@ function allowRemoteContentForURI(aItem)
   ReloadMessage();
 }
 
-/**
- * Displays fine-grained, per-site permissions for remote content.
- */
-function editRemoteContentSettings()
-{
-  toDataManager("|permissions");
-  if (!Services.prefs.getBoolPref("browser.preferences.instantApply"))
-    ReloadMessage();
-}
+// /**
+//  * Displays fine-grained, per-site permissions for remote content.
+//  */
+// function editRemoteContentSettings()
+// {
+//   toDataManager("|permissions");
+//   if (!Services.prefs.getBoolPref("browser.preferences.instantApply"))
+//     ReloadMessage();
+// }
 
 /**
  *  msgHdrForCurrentMessage

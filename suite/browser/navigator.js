@@ -2497,8 +2497,8 @@ function UpdateStatusBarPopupIcon(aEvent)
 }
 function StatusbarViewPopupManager()
 {
-  // Open Data Manager permissions pane site and type prefilled to add.
-  toDataManager(hostUrl() + "|permissions|add|popup");
+  // Open Permissions Manager and type prefilled to add.
+  viewPopups(hostUrl());
 }
 
 function popupBlockerMenuShowing(event)

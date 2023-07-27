@@ -96,7 +96,7 @@ var security = {
     catch (e) {
     }
 
-    toDataManager(hostName + '|cookies');
+    viewCookies(hostName);
   },
 
   /**
@@ -104,7 +104,7 @@ var security = {
    */
   viewPasswords : function()
   {
-    toDataManager(this._getSecurityInfo().hostName + '|passwords');
+    toPasswordManager(this._getSecurityInfo().hostName);
   },
 
   _cert : null

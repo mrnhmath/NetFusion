@@ -39,9 +39,9 @@
 
       <hbox pack="end">
         <button id="viewImages"
-                label="&viewPermissions.label;"
-                accesskey="&viewPermissions.accesskey;"
-                oncommand="toDataManager('|permissions');"
+                label="&viewImages.label;"
+                accesskey="&viewImages.accesskey;"
+                oncommand="viewImages();"
                 preference="pref.advanced.images.disable_button.view_image"/>
       </hbox>
     </groupbox>

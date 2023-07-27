@@ -25,7 +25,6 @@
        command="addonsmgr" modifiers="accel,shift"/>
 </keyset>
 <commandset id="tasksCommands">
-  <command id="Tasks:DataMan" oncommand="toDataManager();"/>
   <command id="Tasks:Navigator" oncommand="toNavigator();"/>
   <command id="Tasks:ErrorConsole" oncommand="toJavaScriptConsole();"/>
 </commandset>
@@ -39,7 +38,7 @@
             <menupopup id="passwordPopup">
               <menuitem label="&passwordDisplayCmd.label;"
                         accesskey="&passwordDisplayCmd.accesskey;"
-                        oncommand="toDataManager('|passwords');"/>
+                        oncommand="toPasswordManager();"/>
               <menuitem label="&passwordExpireCmd.label;"
                         accesskey="&passwordExpireCmd.accesskey;"
                         oncommand="ExpirePassword();"/>
