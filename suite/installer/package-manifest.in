@@ -509,6 +509,10 @@
 ; [Browser Chrome Files]
 @RESPATH@/chrome/comm@JAREXT@
 @RESPATH@/chrome/comm.manifest
+#ifdef DEBUG
+@RESPATH@/chrome/recording.manifest
+@RESPATH@/chrome/recording/*
+#endif
 @RESPATH@/chrome/toolkit@JAREXT@
 @RESPATH@/chrome/toolkit.manifest
 
