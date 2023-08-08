@@ -760,7 +760,9 @@ bin/libfreebl_32int64_3.so
 @RESPATH@/components/msgAsyncPrompter.js
 @RESPATH@/components/msgMime.manifest
 ; OAuth2 for mail
+#ifdef MOZ_MAILNEWS_OAUTH2
 @RESPATH@/components/msgOAuth2Module.js
+#endif
 @RESPATH@/components/newsblog.js
 @RESPATH@/components/newsblog.manifest
 @RESPATH@/components/nsAbAutoCompleteMyDomain.js
