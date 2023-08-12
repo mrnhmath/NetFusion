@@ -123,6 +123,9 @@
 #ifdef MOZ_ICU_DATA_ARCHIVE
 @RESPATH@/@ICU_DATA_FILE@
 #endif
+#ifdef MOZ_SHARED_ICU
+@BINPATH@/@DLL_PREFIX@icu@MOZ_ICU_VERSION@@DLL_SUFFIX@
+#endif
 
 [browser]
 ; [Base Browser Files]
