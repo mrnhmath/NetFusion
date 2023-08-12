@@ -98,6 +98,10 @@ ifdef MOZ_LDAP_XPCOM
 DEFINES += -DMOZ_LDAP_XPCOM=1
 endif
 
+ifdef GKMEDIAS_SHARED_LIBRARY
+DEFINES += -DGKMEDIAS_SHARED_LIBRARY
+endif
+
 # Set MSVC dlls version to package, if any.
 # With VS2015+ it does not make sense to define the ucrt libs without
 # the base c++ libs and vice versa. 
