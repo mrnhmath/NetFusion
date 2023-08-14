@@ -34,6 +34,13 @@ MOZ_SECURITY_SQLSTORE=1
 # Explicitly disable the DBM format
 NSS_DISABLE_DBM=1
 
+# Set the chrome packing format and compression algorithm
+# Possible values are omni, jar, and flat
+# Currently, only omni and flat are supported
+MOZ_CHROME_FILE_FORMAT=omni
+JAR_COMPRESSION=brotli
+OMNIJAR_NAME=netfusion.res
+
 MOZ_APP_VERSION_TXT=${_topsrcdir}/$MOZ_BUILD_APP/config/version.txt
 MOZ_APP_VERSION=`cat $MOZ_APP_VERSION_TXT`
 NETFUSION_VERSION=$MOZ_APP_VERSION
