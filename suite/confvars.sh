@@ -8,7 +8,6 @@ MOZ_APP_VENDOR=NetFusion
 MOZ_APP_NAME=netfusion
 MOZ_APP_DISPLAYNAME=NetFusion
 MOZ_COMPOSER=1
-MOZ_DISABLE_EXPORT_JS=1
 MOZ_SUITE=1
 MOZ_MAILNEWS=1
 MOZ_BRANDING_DIRECTORY=suite/branding/unofficial
@@ -21,20 +20,15 @@ MOZ_UPDATER=1
 ACCEPTED_MAR_CHANNEL_IDS=unofficial,release
 # The MAR_CHANNEL_ID must not contain the following 3 characters: ",\t "
 MAR_CHANNEL_ID=unofficial
-MOZ_SERVICES_FXACCOUNTS=1
-MOZ_STATIC_BUILD_UNSUPPORTED=1
 MOZ_WEBGL_CONFORMANT=1
 MOZ_WEBM_ENCODER=1
-MOZ_BINARY_EXTENSIONS=1
-MOZ_RUST_MP4PARSE=1
-MOZ_RUST_URLPARSE=1
 
 # Enable SQL storage format for NSS security
 MOZ_SECURITY_SQLSTORE=1
 # Explicitly disable the DBM format
 NSS_DISABLE_DBM=1
 
-# Set the chrome packing format and compression algorithm
+# Set the chrome packaging format and compression algorithm
 # Possible values are omni, jar, and flat
 # Currently, only omni and flat are supported
 MOZ_CHROME_FILE_FORMAT=omni
