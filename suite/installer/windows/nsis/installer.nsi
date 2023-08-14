@@ -234,10 +234,10 @@ Section "-InstallStartCleanup"
     ${EndIf}
 
   ; setup the application model id registration value
-  ${InitHashAppModelId} "$INSTDIR" "Software\Mozilla\${AppName}\TaskBarIDs"
+  ${InitHashAppModelId} "$INSTDIR" "Software\NetFusion\${AppName}\TaskBarIDs"
 
   ; Remove the updates directory for Vista and above
-  ${CleanUpdateDirectories} "Mozilla\SeaMonkey" "Mozilla\updates"
+  ${CleanUpdateDirectories} "NetFusion\NetFusion" "NetFusion\updates"
 
   ${InstallStartCleanupCommon}
 SectionEnd
@@ -371,12 +371,12 @@ Section "-Application" APP_IDX
   StrCpy $3 "$\"$8$\"  -url $\"%1$\""
   ${GetLongPath} "$INSTDIR\${FileMainEXE}" $8
 
-  ; An empty string is used for the 5th param because SeaMonkeyHTML is not a
+  ; An empty string is used for the 5th param because NetFusionHTML is not a
   ; protocol handler
-  ${AddHandlerValues} "SOFTWARE\Classes\SeaMonkeyHTML" "$3" \
+  ${AddHandlerValues} "SOFTWARE\Classes\NetFusionHTML" "$3" \
                       "$INSTDIR\chrome\icons\default\html-file.ico,0" \
                       "${AppRegName} Document" "" ""
-  ${AddDDEHandlerValues} "SeaMonkeyURL" "$1" "$8,0" "${AppRegName} URL" "" \
+  ${AddDDEHandlerValues} "NetFusionURL" "$1" "$8,0" "${AppRegName} URL" "" \
                          "${DDEApplication}" "$2" "WWW_OpenURL"
 
   ${FixShellIconHandler}

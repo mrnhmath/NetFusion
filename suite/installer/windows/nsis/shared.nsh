@@ -6,10 +6,10 @@
   ${CreateShortcutsLog}
 
   ; Remove registry entries for non-existent apps and for apps that point to our
-  ; install location in the Software\Mozilla key and uninstall registry entries
+  ; install location in the Software\NetFusion key and uninstall registry entries
   ; that point to our install location for both HKCU and HKLM.
   SetShellVarContext current  ; Set SHCTX to the current user (e.g. HKCU) 
-  ${RegCleanMain} "Software\Mozilla"
+  ${RegCleanMain} "Software\NetFusion"
   ${RegCleanUninstall}
   ${UpdateProtocolHandlers}
 
@@ -23,23 +23,23 @@
   ${UpgradeMapiDLLs}
 
   ClearErrors
-  WriteRegStr HKLM "Software\Mozilla" "${BrandShortName}InstallerTest" "Write Test"
+  WriteRegStr HKLM "Software\NetFusion" "${BrandShortName}InstallerTest" "Write Test"
   ${If} ${Errors}
     StrCpy $TmpVal "HKCU" ; used primarily for logging
   ${Else}
-    DeleteRegValue HKLM "Software\Mozilla" "${BrandShortName}InstallerTest"
+    DeleteRegValue HKLM "Software\NetFusion" "${BrandShortName}InstallerTest"
     SetShellVarContext all ; Set SHCTX to all users (e.g. HKLM)
     StrCpy $TmpVal "HKLM" ; used primarily for logging
-    ${RegCleanMain} "Software\Mozilla"
+    ${RegCleanMain} "Software\NetFusion"
     ${RegCleanUninstall}
     ${SetStartMenuInternet}
     ${FixShellIconHandler}
     ${SetUninstallKeys}
     ${UpdateProtocolHandlers}
 
-    ReadRegStr $0 HKLM "Software\mozilla.org\Mozilla" "CurrentVersion"
+    ReadRegStr $0 HKLM "Software\netfusion-project.org\NetFusion" "CurrentVersion"
     ${If} "$0" != "${GREVersion}"
-      WriteRegStr HKLM "Software\mozilla.org\Mozilla" "CurrentVersion" "${GREVersion}"
+      WriteRegStr HKLM "Software\netfusion-project\NetFusion" "CurrentVersion" "${GREVersion}"
     ${EndIf}
 
     ; Only update the Clients\Mail registry key values if they don't exist or
@@ -68,7 +68,7 @@
   ${EndIf}
 
   ${RemoveDeprecatedKeys}
-  ; Add Software\Mozilla\ registry entries
+  ; Add Software\NetFusion\ registry entries
   ${SetAppKeys}
 
   ${FixClassKeys}
@@ -100,9 +100,9 @@
       ${GetLongPath} "$0" $0
     ${EndIf}
     ${If} "$0" != "$INSTDIR"
-      DeleteRegValue HKLM "Software\Mozilla" "${BrandShortName}InstallerTest"
+      DeleteRegValue HKLM "Software\NetFusion" "${BrandShortName}InstallerTest"
       ClearErrors
-      WriteRegStr HKLM "Software\Mozilla" "${BrandShortName}InstallerTest" "Write Test"
+      WriteRegStr HKLM "Software\NetFusion" "${BrandShortName}InstallerTest" "Write Test"
       ${If} ${Errors}
         ; Prevent multiple elevation requests
         ClearErrors
@@ -112,7 +112,7 @@
         ${EndUnless}
         ${ElevateUAC}
       ${EndIf}
-      DeleteRegValue HKLM "Software\Mozilla" "${BrandShortName}InstallerTest"
+      DeleteRegValue HKLM "Software\NetFusion" "${BrandShortName}InstallerTest"
       ${SetStartMenuInternet}
     ${EndIf}
     SetShellVarContext all  ; Set SHCTX to all users (e.g. HKLM)
@@ -143,9 +143,9 @@
       ${GetLongPath} "$0" $0
     ${EndIf}
     ${If} "$0" != "$INSTDIR"
-      DeleteRegValue HKLM "Software\Mozilla" "${BrandShortName}InstallerTest"
+      DeleteRegValue HKLM "Software\NetFusion" "${BrandShortName}InstallerTest"
       ClearErrors
-      WriteRegStr HKLM "Software\Mozilla" "${BrandShortName}InstallerTest" "Write Test"
+      WriteRegStr HKLM "Software\NetFusion" "${BrandShortName}InstallerTest" "Write Test"
       ${If} ${Errors}
         ; Prevent multiple elevation requests
         ClearErrors
@@ -155,7 +155,7 @@
         ${EndUnless}
         ${ElevateUAC}
       ${EndIf}
-      DeleteRegValue HKLM "Software\Mozilla" "${BrandShortName}InstallerTest"
+      DeleteRegValue HKLM "Software\NetFusion" "${BrandShortName}InstallerTest"
       SetShellVarContext all     ; Set SHCTX to all users (e.g. HKLM)
       ${SetClientsMail}
     ${EndIf}
@@ -174,9 +174,9 @@
       ${GetLongPath} "$0" $0
     ${EndIf}
     ${If} "$0" != "$INSTDIR"
-      DeleteRegValue HKLM "Software\Mozilla" "${BrandShortName}InstallerTest"
+      DeleteRegValue HKLM "Software\NetFusion" "${BrandShortName}InstallerTest"
       ClearErrors
-      WriteRegStr HKLM "Software\Mozilla" "${BrandShortName}InstallerTest" "Write Test"
+      WriteRegStr HKLM "Software\NetFusion" "${BrandShortName}InstallerTest" "Write Test"
       ${If} ${Errors}
         ; Prevent multiple elevation requests
         ClearErrors
@@ -186,7 +186,7 @@
         ${EndUnless}
         ${ElevateUAC}
       ${EndIf}
-      DeleteRegValue HKLM "Software\Mozilla" "${BrandShortName}InstallerTest"
+      DeleteRegValue HKLM "Software\NetFusion" "${BrandShortName}InstallerTest"
       SetShellVarContext all     ; Set SHCTX to all users (e.g. HKLM)
       ${SetClientsNews}
     ${EndIf}
@@ -300,12 +300,12 @@
   StrCpy $2 "$\"$8$\" -url $\"%1$\""
   StrCpy $3 "$\"%1$\",,0,0,,,,"
 
-  ; An empty string is used for the 5th param because SeaMonkeyHTML is not a
+  ; An empty string is used for the 5th param because NetFusionHTML is not a
   ; protocol handler
-  ${AddHandlerValues} "$0\SeaMonkeyHTML" "$2" \
+  ${AddHandlerValues} "$0\NetFusionHTML" "$2" \
                       "$INSTDIR\chrome\icons\default\html-file.ico,0" \
                       "${AppRegName} Document" "" ""
-  ${AddDDEHandlerValues} "SeaMonkeyURL" "$1" "$8,0" "${AppRegName} URL" "delete" \
+  ${AddDDEHandlerValues} "NetFusionURL" "$1" "$8,0" "${AppRegName} URL" "delete" \
                          "${DDEApplication}" "$3" "WWW_OpenURL"
 
   ; An empty string is used for the 4th & 5th params because the following
@@ -316,34 +316,34 @@
   ${AddDDEHandlerValues} "https" "$1" "$8,0" "" "" "${DDEApplication}" "$3" "WWW_OpenURL"
 
   ReadRegStr $6 HKCR ".htm" ""
-  ${If} "$6" != "SeaMonkeyHTML"
-    WriteRegStr SHCTX "$0\.htm" "" "SeaMonkeyHTML"
+  ${If} "$6" != "NetFusionHTML"
+    WriteRegStr SHCTX "$0\.htm" "" "NetFusionHTML"
   ${EndIf}
 
   ReadRegStr $6 HKCR ".html" ""
-  ${If} "$6" != "SeaMonkeyHTML"
-    WriteRegStr SHCTX "$0\.html" "" "SeaMonkeyHTML"
+  ${If} "$6" != "NetFusionHTML"
+    WriteRegStr SHCTX "$0\.html" "" "NetFusionHTML"
   ${EndIf}
 
   ReadRegStr $6 HKCR ".shtml" ""
-  ${If} "$6" != "SeaMonkeyHTML"
-    WriteRegStr SHCTX "$0\.shtml" "" "SeaMonkeyHTML"
+  ${If} "$6" != "NetFusionHTML"
+    WriteRegStr SHCTX "$0\.shtml" "" "NetFusionHTML"
   ${EndIf}
 
   ReadRegStr $6 HKCR ".xht" ""
-  ${If} "$6" != "SeaMonkeyHTML"
-     WriteRegStr SHCTX "$0\.xht" "" "SeaMonkeyHTML"
+  ${If} "$6" != "NetFusionHTML"
+     WriteRegStr SHCTX "$0\.xht" "" "NetFusionHTML"
   ${EndIf}
 
   ReadRegStr $6 HKCR ".xhtml" ""
-  ${If} "$6" != "SeaMonkeyHTML"
-    WriteRegStr SHCTX "$0\.xhtml" "" "SeaMonkeyHTML"
+  ${If} "$6" != "NetFusionHTML"
+    WriteRegStr SHCTX "$0\.xhtml" "" "NetFusionHTML"
   ${EndIf}
 
   ; Only add webm if it's not present
   ${CheckIfRegistryKeyExists} "$0" ".webm" $7
   ${If} $7 == "false"
-    WriteRegStr SHCTX "$0\.webm"  "" "SeaMonkeyHTML"
+    WriteRegStr SHCTX "$0\.webm"  "" "NetFusionHTML"
   ${EndIf}
 !macroend
 !define SetHandlersBrowser "!insertmacro SetHandlersBrowser"
@@ -355,21 +355,21 @@
   StrCpy $1 "$\"$8$\" $\"%1$\""
   StrCpy $2 "$\"$8$\" -osint -compose $\"%1$\""
 
-  ; An empty string is used for the 5th param because SeaMonkeyEML is not a
+  ; An empty string is used for the 5th param because NetFusionEML is not a
   ; protocol handler
-  ${AddHandlerValues} "$0\SeaMonkeyEML"  "$1" "$INSTDIR\chrome\icons\default\misc-file.ico,0" "${AppRegNameMail} Document" "" ""
+  ${AddHandlerValues} "$0\NetFusionEML"  "$1" "$INSTDIR\chrome\icons\default\misc-file.ico,0" "${AppRegNameMail} Document" "" ""
 
-  ${AddHandlerValues} "$0\SeaMonkeyCOMPOSE" "$2" "$8,0" "${AppRegNameMail} URL" "delete" ""
+  ${AddHandlerValues} "$0\NetFusionCOMPOSE" "$2" "$8,0" "${AppRegNameMail} URL" "delete" ""
 
   ; An empty string is used for the 4th & 5th params because the following
   ; protocol handler already has a display name and additional keys required
   ; for a protocol handler.
   ${AddHandlerValues} "$0\mailto" "$2" "$8,0" "${AppRegNameMail} URL" "true" ""
 
-  ; Associate the file handlers with SeaMonkeyEML
+  ; Associate the file handlers with NetFusionEML
   ReadRegStr $6 HKCR ".eml" ""
-  ${If} "$6" != "SeaMonkeyEML"
-    WriteRegStr SHCTX "$0\.eml"   "" "SeaMonkeyEML"
+  ${If} "$6" != "NetFusionEML"
+    WriteRegStr SHCTX "$0\.eml"   "" "NetFusionEML"
   ${EndIf}
 !macroend
 !define SetHandlersMail "!insertmacro SetHandlersMail"
@@ -379,7 +379,7 @@
   StrCpy $0 "SOFTWARE\Classes"
   StrCpy $1 "$\"$8$\" -osint -mail $\"%1$\""
 
-  ${AddHandlerValues} "$0\SeaMonkeyNEWS" "$1" "$8,0" "${AppRegNameNews} URL" "delete" ""
+  ${AddHandlerValues} "$0\NetFusionNEWS" "$1" "$8,0" "${AppRegNameNews} URL" "delete" ""
   ; An empty string is used for the 4th & 5th params because the following
   ; protocol handlers already have a display name and additional keys required
   ; for a protocol handler.
@@ -421,17 +421,17 @@
   WriteRegStr HKLM "$0\Capabilities" "ApplicationIcon" "$8,0"
   WriteRegStr HKLM "$0\Capabilities" "ApplicationName" "${BrandShortName}"
 
-  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".htm"   "SeaMonkeyHTML" 
-  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".html"  "SeaMonkeyHTML"
-  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".shtml" "SeaMonkeyHTML"
-  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".xht"   "SeaMonkeyHTML"
-  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".xhtml" "SeaMonkeyHTML"
+  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".htm"   "NetFusionHTML"
+  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".html"  "NetFusionHTML"
+  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".shtml" "NetFusionHTML"
+  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".xht"   "NetFusionHTML"
+  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".xhtml" "NetFusionHTML"
 
   WriteRegStr HKLM "$0\Capabilities\StartMenu" "StartMenuInternet" "$R9"
 
-  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "ftp"    "SeaMonkeyURL"
-  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "http"   "SeaMonkeyURL"
-  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "https"  "SeaMonkeyURL"
+  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "ftp"    "NetFusionURL"
+  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "http"   "NetFusionURL"
+  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "https"  "NetFusionURL"
 
   ; Vista Registered Application
   WriteRegStr HKLM "Software\RegisteredApplications" "${AppRegName}" "$0\Capabilities"
@@ -439,19 +439,19 @@
 !define SetStartMenuInternet "!insertmacro SetStartMenuInternet"
 
 !macro FixShellIconHandler
-  ; The IconHandler reference for SeaMonkeyHTML can end up in an inconsistent
+  ; The IconHandler reference for NetFusionHTML can end up in an inconsistent
   ; state due to changes not being detected by the IconHandler for side by side
   ; installs. The symptoms can be either an incorrect icon or no icon being
-  ; displayed for files associated with SeaMonkey. By setting it here it will
+  ; displayed for files associated with NetFusion. By setting it here it will
   ; always reference the install referenced in the
-  ; HKLM\Software\Classes\SeaMonkeyHTML registry key.
+  ; HKLM\Software\Classes\NetFusionHTML registry key.
   ClearErrors
-  ReadRegStr $2 HKLM "Software\Classes\SeaMonkeyHTML\ShellEx\IconHandler" ""
+  ReadRegStr $2 HKLM "Software\Classes\NetFusionHTML\ShellEx\IconHandler" ""
   ${Unless} ${Errors}
     ClearErrors
-    ReadRegStr $3 HKLM "Software\Classes\CLSID\$2\Old Icon\SeaMonkeyHTML\DefaultIcon" ""
+    ReadRegStr $3 HKLM "Software\Classes\CLSID\$2\Old Icon\NetFusionHTML\DefaultIcon" ""
     ${Unless} ${Errors}
-      WriteRegStr HKLM "Software\Classes\CLSID\$2\Old Icon\SeaMonkeyHTML\DefaultIcon" "" "$INSTDIR\chrome\icons\default\html-file.ico,0"
+      WriteRegStr HKLM "Software\Classes\CLSID\$2\Old Icon\NetFusionHTML\DefaultIcon" "" "$INSTDIR\chrome\icons\default\html-file.ico,0"
     ${EndUnless}
   ${EndUnless}
 !macroend
@@ -535,9 +535,9 @@
   WriteRegStr HKLM "$0\Capabilities" "ApplicationDescription" "$(REG_APP_DESC)"
   WriteRegStr HKLM "$0\Capabilities" "ApplicationIcon" "$8,0"
   WriteRegStr HKLM "$0\Capabilities" "ApplicationName" "${AppRegNameMail}"
-  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".eml"   "SeaMonkeyEML"
+  WriteRegStr HKLM "$0\Capabilities\FileAssociations" ".eml"   "NetFusionEML"
   WriteRegStr HKLM "$0\Capabilities\StartMenu" "Mail" "${BrandFullNameInternal}"
-  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "mailto" "SeaMonkeyCOMPOSE"
+  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "mailto" "NetFusionCOMPOSE"
 
   ; Vista Registered Application
   WriteRegStr HKLM "Software\RegisteredApplications" "${AppRegNameMail}" "$0\Capabilities"
@@ -593,9 +593,9 @@
   WriteRegStr HKLM "$0\Capabilities" "ApplicationDescription" "$(REG_APP_DESC)"
   WriteRegStr HKLM "$0\Capabilities" "ApplicationIcon" "$8,0"
   WriteRegStr HKLM "$0\Capabilities" "ApplicationName" "${AppRegNameNews}"
-  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "nntp" "SeaMonkeyNEWS"
-  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "news" "SeaMonkeyNEWS"
-  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "snews" "SeaMonkeyNEWS"
+  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "nntp" "NetFusionNEWS"
+  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "news" "NetFusionNEWS"
+  WriteRegStr HKLM "$0\Capabilities\URLAssociations" "snews" "NetFusionNEWS"
 
   ; Protocols
   StrCpy $1 "$\"$8$\" -osint -mail $\"%1$\""
@@ -610,27 +610,27 @@
 
 !macro SetAppKeys
   ${GetLongPath} "$INSTDIR" $8
-  StrCpy $0 "Software\Mozilla\${BrandFullNameInternal}\${AppVersion} (${AB_CD})\Main"
+  StrCpy $0 "Software\NetFusion\${BrandFullNameInternal}\${AppVersion} (${AB_CD})\Main"
   ${WriteRegStr2} $TmpVal "$0" "Install Directory" "$8" 0
   ${WriteRegStr2} $TmpVal "$0" "PathToExe" "$8\${FileMainEXE}" 0
 
-  StrCpy $0 "Software\Mozilla\${BrandFullNameInternal}\${AppVersion} (${AB_CD})\Uninstall"
+  StrCpy $0 "Software\NetFusion\${BrandFullNameInternal}\${AppVersion} (${AB_CD})\Uninstall"
   ${WriteRegStr2} $TmpVal "$0" "Description" "${BrandFullNameInternal} ${AppVersion} (${ARCH} ${AB_CD})" 0
 
-  StrCpy $0 "Software\Mozilla\${BrandFullNameInternal}\${AppVersion} (${AB_CD})"
+  StrCpy $0 "Software\NetFusion\${BrandFullNameInternal}\${AppVersion} (${AB_CD})"
   ${WriteRegStr2} $TmpVal  "$0" "" "${AppVersion} (${AB_CD})" 0
 
-  StrCpy $0 "Software\Mozilla\${BrandFullNameInternal} ${AppVersion}\bin"
+  StrCpy $0 "Software\NetFusion\${BrandFullNameInternal} ${AppVersion}\bin"
   ${WriteRegStr2} $TmpVal "$0" "PathToExe" "$8\${FileMainEXE}" 0
 
-  StrCpy $0 "Software\Mozilla\${BrandFullNameInternal} ${AppVersion}\extensions"
+  StrCpy $0 "Software\NetFusion\${BrandFullNameInternal} ${AppVersion}\extensions"
   ${WriteRegStr2} $TmpVal "$0" "Components" "$8\components" 0
   ${WriteRegStr2} $TmpVal "$0" "Plugins" "$8\plugins" 0
 
-  StrCpy $0 "Software\Mozilla\${BrandFullNameInternal} ${AppVersion}"
+  StrCpy $0 "Software\NetFusion\${BrandFullNameInternal} ${AppVersion}"
   ${WriteRegStr2} $TmpVal "$0" "GeckoVer" "${GREVersion}" 0
 
-  StrCpy $0 "Software\Mozilla\${BrandFullNameInternal}"
+  StrCpy $0 "Software\NetFusion\${BrandFullNameInternal}"
   ${WriteRegStr2} $TmpVal "$0" "" "${GREVersion}" 0
   ${WriteRegStr2} $TmpVal "$0" "CurrentVersion" "${AppVersion} (${AB_CD})" 0
 !macroend
@@ -657,7 +657,7 @@
   ${WriteRegStr2} $1 "$0" "DisplayName" "${BrandFullNameInternal} ${AppVersion} (${ARCH} ${AB_CD})" 0
   ${WriteRegStr2} $1 "$0" "DisplayVersion" "${AppVersion}" 0
   ${WriteRegStr2} $1 "$0" "InstallLocation" "$8" 0
-  ${WriteRegStr2} $1 "$0" "Publisher" "Mozilla" 0
+  ${WriteRegStr2} $1 "$0" "Publisher" "NetFusion" 0
   ${WriteRegStr2} $1 "$0" "UninstallString" "$8\uninstall\helper.exe" 0
   ${WriteRegStr2} $1 "$0" "URLInfoAbout" "${URLInfoAbout}" 0
   ${WriteRegStr2} $1 "$0" "URLUpdateInfo" "${URLUpdateInfo}" 0
@@ -689,18 +689,18 @@
 
   ; Only set the file and protocol handlers if the existing one under HKCR is
   ; for this install location.
-  ${IsHandlerForInstallDir} "SeaMonkeyHTML" $R9
+  ${IsHandlerForInstallDir} "NetFusionHTML" $R9
   ${If} "$R9" == "true"
-    ; An empty string is used for the 5th param because SeaMonkeyHTML is not a
+    ; An empty string is used for the 5th param because NetFusionHTML is not a
     ; protocol handler.
-    ${AddHandlerValues} "$0\SeaMonkeyHTML" "$5" \
+    ${AddHandlerValues} "$0\NetFusionHTML" "$5" \
                         "$INSTDIR\chrome\icons\default\html-file.ico,0" \
                         "${AppRegName} Document" "" ""
   ${EndIf}
 
-  ${IsHandlerForInstallDir} "SeaMonkeyURL" $R9
+  ${IsHandlerForInstallDir} "NetFusionURL" $R9
   ${If} "$R9" == "true"
-    ${AddDDEHandlerValues} "SeaMonkeyURL" "$3" "$8,0" "${AppRegName} URL" \
+    ${AddDDEHandlerValues} "NetFusionURL" "$3" "$8,0" "${AppRegName} URL" \
                            "delete" "${DDEApplication}" "$4" "WWW_OpenURL"
   ${EndIf}
 
@@ -722,16 +722,16 @@
                            "$4" "WWW_OpenURL"
   ${EndIf}
 
-  ${IsHandlerForInstallDir} "SeaMonkeyEML" $R9
+  ${IsHandlerForInstallDir} "NetFusionEML" $R9
   ${If} "$R9" == "true"
-    ${AddHandlerValues} "SOFTWARE\Classes\SeaMonkeyEML" "$2" \
+    ${AddHandlerValues} "SOFTWARE\Classes\NetFusionEML" "$2" \
                         "$INSTDIR\chrome\icons\default\misc-file.ico,0" \
                         "${AppRegNameMail} Document" "" ""
   ${EndIf}
 
-  ${IsHandlerForInstallDir} "SeaMonkeyMAIL" $R9
+  ${IsHandlerForInstallDir} "NetFusionMAIL" $R9
   ${If} "$R9" == "true"
-    ${AddHandlerValues} "SOFTWARE\Classes\SeaMonkeyMAIL" "$2" "$8,0" \
+    ${AddHandlerValues} "SOFTWARE\Classes\NetFusionMAIL" "$2" "$8,0" \
                         "${AppRegNameMail} URL" "delete" ""
   ${EndIf}
 
@@ -740,9 +740,9 @@
     ${AddHandlerValues} "SOFTWARE\Classes\mailto" "$1" "$8,0" "" "" ""
   ${EndIf}
 
-  ${IsHandlerForInstallDir} "SeaMonkeyNEWS" $R9
+  ${IsHandlerForInstallDir} "NetFusionNEWS" $R9
   ${If} "$R9" == "true"
-    ${AddHandlerValues} "SOFTWARE\Classes\SeaMonkeyNEWS" "$2" "$8,0" \
+    ${AddHandlerValues} "SOFTWARE\Classes\NetFusionNEWS" "$2" "$8,0" \
                         "${AppRegNameMail} URL" "delete" ""
   ${EndIf}
 
@@ -768,11 +768,11 @@
 !macro RemoveDeprecatedKeys
   StrCpy $0 "SOFTWARE\Classes"
   ; Remove support for launching gopher urls from the shell during install or
-  ; update if the DefaultIcon is from seamonkey.exe.
+  ; update if the DefaultIcon is from netfusion.exe.
   ${RegCleanAppHandler} "gopher"
   
   ; Remove support for launching chrome urls from the shell during install or
-  ; update if the DefaultIcon is from seamonkey.exe (Bug 301073).
+  ; update if the DefaultIcon is from netfusion.exe (Bug 301073).
   ${RegCleanAppHandler} "chrome"
   
   ; Delete gopher from Capabilities\URLAssociations if it is present.
@@ -784,10 +784,10 @@
     DeleteRegValue HKLM "$0\Capabilities\URLAssociations" "gopher"
   ${EndUnless}
 
-  ; Delete gopher from the user's UrlAssociations if it points to SeamonkeyURL.
+  ; Delete gopher from the user's UrlAssociations if it points to NetFusionURL.
   StrCpy $0 "Software\Microsoft\Windows\Shell\Associations\UrlAssociations\gopher"
   ReadRegStr $2 HKCU "$0\UserChoice" "Progid"
-  ${If} "$2" == "SeamonkeyURL"
+  ${If} "$2" == "NetFusionURL"
     DeleteRegKey HKCU "$0"
   ${EndIf}
 !macroend
@@ -829,11 +829,11 @@
 
   ; Always set the file and protocol handlers since they may specify a
   ; different path and the path is used by Vista when setting associations.
-  ${AddHandlerValues} "$0\SeaMonkeyURL" "$1" "$8,0" "${AppRegName} URL" "delete" "true"
+  ${AddHandlerValues} "$0\NetFusionURL" "$1" "$8,0" "${AppRegName} URL" "delete" "true"
 
-  ; An empty string is used for the 5th param because SeaMonkeyHTML is not a
+  ; An empty string is used for the 5th param because NetFusionHTML is not a
   ; protocol handler
-  ${AddHandlerValues} "$0\SeaMonkeyHTML" "$2" \
+  ${AddHandlerValues} "$0\NetFusionHTML" "$2" \
                       "$INSTDIR\chrome\icons\default\html-file.ico,0" \
                       "${AppRegName} Document" "" ""
 
@@ -862,7 +862,7 @@
   GetFullPathName $8 "$INSTDIR\${FileMainEXE}"
 
   StrCpy $1 "$\"$8$\" -compose $\"%1$\""
-  ${AddHandlerValues} "$0\SeaMonkeyCOMPOSE" "$1" "$8,0" "${AppRegNameMail} URL" "delete" ""
+  ${AddHandlerValues} "$0\NetFusionCOMPOSE" "$1" "$8,0" "${AppRegNameMail} URL" "delete" ""
 
   ReadRegStr $2 SHCTX "$0\mailto\shell\open\command" ""
   ${GetPathFromString} "$2" $3
@@ -874,10 +874,10 @@
   ${EndUnless}
 
   StrCpy $1 "$\"$8$\" $\"%1$\""
-  ${AddHandlerValues} "$0\SeaMonkeyEML" "$1" "$INSTDIR\chrome\icons\default\misc-file.ico,0" "${AppRegNameMail} Document" "" ""
+  ${AddHandlerValues} "$0\NetFusionEML" "$1" "$INSTDIR\chrome\icons\default\misc-file.ico,0" "${AppRegNameMail} Document" "" ""
 
   StrCpy $1 "$\"$8$\" -osint -mail $\"%1$\""
-  ${AddHandlerValues} "$0\SeaMonkeyNEWS" "$1" "$8,0" "${AppRegNameNews} URL" "delete" ""
+  ${AddHandlerValues} "$0\NetFusionNEWS" "$1" "$8,0" "${AppRegNameNews} URL" "delete" ""
 
   ReadRegStr $2 SHCTX "$0\news\shell\open\command" ""
   ${GetPathFromString} "$2" $3
@@ -938,7 +938,7 @@
     ; Prior to Unicode installer the Start Menu directory was written to the
     ; registry and this value can be used to set the Start Menu directory.
     ClearErrors
-    ReadRegStr $0 SHCTX "Software\Mozilla\${BrandFullNameInternal}\${AppVersion} (${AB_CD})\Main" "Start Menu Folder"
+    ReadRegStr $0 SHCTX "Software\NetFusion\${BrandFullNameInternal}\${AppVersion} (${AB_CD})\Main" "Start Menu Folder"
     ${If} ${Errors}
       ${FindSMProgramsDir} $0
       ${If} "$0" != ""

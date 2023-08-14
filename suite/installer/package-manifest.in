@@ -1,4 +1,4 @@
-; Package file for the SeaMonkey build.
+; Package file for the NetFusion build.
 ;
 ; Packaging manifest is used to copy files from dist/bin
 ; to the staging directory.
@@ -38,7 +38,7 @@
 ; Mac bundle stuff
 @APPNAME@/Contents/Info.plist
 @APPNAME@/Contents/PkgInfo
-@RESPATH@/seamonkey.icns
+@RESPATH@/netfusion.icns
 @RESPATH@/@LPROJ_ROOT@.lproj/*
 #endif
 
@@ -580,7 +580,7 @@
 @RESPATH@/chrome/icons/default/places.png
 @RESPATH@/chrome/icons/default/places16.png
 @RESPATH@/chrome/icons/default/places48.png
-@RESPATH@/chrome/icons/default/seamonkey.png
+@RESPATH@/chrome/icons/default/netfusion.png
 #ifdef MOZ_UPDATER
 @RESPATH@/icons/updater.png
 #endif

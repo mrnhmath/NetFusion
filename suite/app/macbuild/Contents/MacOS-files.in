@@ -1,7 +1,7 @@
 /*.app/***
 /*.dylib
 /certutil
-/seamonkey-bin
+/netfusion-bin
 /pk12util
 /ssltunnel
 /xpcshell

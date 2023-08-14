@@ -534,7 +534,7 @@ var nsBrowserContentHandler = {
       var flagIdx = cmdLine.findFlag(value, false);
 
       if (flagIdx > -1) {
-        var testExpr = new RegExp("seamonkey" + value + ":");
+        var testExpr = new RegExp("netfusion" + value + ":");
         if (cmdLine.length != flagIdx + 2 ||
             testExpr.test(cmdLine.getArgument(flagIdx + 1)))
           throw Components.results.NS_ERROR_ABORT;

@@ -336,7 +336,7 @@ omni.jar
   Contents/Plug-Ins/PrintPDE.plugin/Contents/Resources/English.lproj/PrintPDE.nib/classes.nib
   Contents/Plug-Ins/PrintPDE.plugin/Contents/Resources/English.lproj/PrintPDE.nib/info.nib
   Contents/Plug-Ins/PrintPDE.plugin/Contents/Resources/English.lproj/PrintPDE.nib/objects.xib
-  @DIR_RESOURCES@/seamonkey-bin.rsrc
+  @DIR_RESOURCES@/netfusion-bin.rsrc
   @DIR_MACOS@components/mozldap.xpt
   @DIR_MACOS@components/pipboot.xpt
   @DIR_MACOS@components/pipnss.xpt

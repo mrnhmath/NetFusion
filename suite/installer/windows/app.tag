@@ -1,4 +1,4 @@
 ;!@Install@!UTF-8!
-Title="SeaMonkey"
+Title="NetFusion"
 RunProgram="setup.exe"
 ;!@InstallEnd@!

@@ -92,7 +92,7 @@ pref("browser.findbar.enabled", true);
 pref("browser.doorhanger.enabled", true);
 
 // search engines URL
-pref("browser.search.searchEnginesURL", "https://addons.thunderbird.net/%LOCALE%/%APP%/search/?atype=4");
+pref("browser.search.searchEnginesURL", "");
 
 // pointer to the default engine name
 pref("browser.search.defaultenginename", "chrome://communicator-region/locale/region.properties");
@@ -360,7 +360,7 @@ pref("mailnews.ui.deleteMarksRead", true);
 // (This is intentionally on the high side; see bugs 746055 and 768015.)
 pref("image.mem.max_decoded_image_kb", 256000);
 
-pref("spellchecker.dictionaries.download.url", "https://addons.thunderbird.net/%LOCALE%/%APP%/dictionaries");
+pref("spellchecker.dictionaries.download.url", "");
 
 // this will automatically enable inline spellchecking (if it is available) for
 // editable elements in HTML
@@ -455,7 +455,7 @@ pref("app.releaseNotesURL", "chrome://branding/locale/brand.properties");
 pref("app.vendorURL", "chrome://branding/locale/brand.properties");
 
 // Base URL for web-based support pages.
-pref("app.support.baseURL", "http://www.seamonkey-project.org/doc/");
+pref("app.support.baseURL", "");
 
 // App-specific update preferences
 
@@ -469,10 +469,10 @@ pref("app.update.auto", true);
 pref("app.update.silent", false);
 
 // Update service URL:
-pref("app.update.url", "https://aus2-community.mozilla.org/update/3/%PRODUCT%/%VERSION%/%BUILD_ID%/%BUILD_TARGET%/%LOCALE%/%CHANNEL%/%OS_VERSION%/%SYSTEM_CAPABILITIES%/%DISTRIBUTION%/%DISTRIBUTION_VERSION%/update.xml");
+pref("app.update.url", "");
 // URL user can browse to manually if for some reason all update installation
 // attempts fail.
-pref("app.update.url.manual", "http://www.seamonkey-project.org/");
+pref("app.update.url.manual", "");
 // A default value for the "More information about this update" link
 // supplied in the "An update is available" page of the update wizard.
 pref("app.update.url.details", "chrome://communicator-region/locale/region.properties");
@@ -559,21 +559,21 @@ pref("extensions.autoDisableScopes", 15);
 // Preferences for AMO integration
 pref("extensions.getAddons.cache.enabled", true);  // This also toggles personalized recommendations
 pref("extensions.getAddons.maxResults", 15);
-pref("extensions.getAddons.get.url", "https://live.thunderbird.net/services.addons/api/v3/addons/search/?guid=%IDS%&lang=%LOCALE%");
-pref("extensions.getAddons.getWithPerformance.url", "https://live.thunderbird.net/services.addons/api/v3/addons/search/?guid=%IDS%?src=seamonkey&appOS=%OS%&appVersion=%VERSION%&tMain=%TIME_MAIN%&tFirstPaint=%TIME_FIRST_PAINT%&tSessionRestored=%TIME_SESSION_RESTORED%");
-pref("extensions.getAddons.compatOverides.url", "https://live.thunderbird.net/services.addons/api/v3/addons/compat-override/?guid=%IDS%&lang=%LOCALE%");
-pref("extensions.getAddons.link.url", "https://addons.thunderbird.net/%LOCALE%/%APP%/");
-pref("extensions.getAddons.recommended.url", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/api/%API_VERSION%/list/recommended/all/%MAX_RESULTS%/%OS%/%VERSION%?src=seamonkey");
-pref("extensions.getAddons.search.browseURL", "https://addons.thunderbird.net/%LOCALE%/%APP%/search/?q=%TERMS%");
-pref("extensions.getAddons.search.url", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/api/%API_VERSION%/search/%TERMS%/all/%MAX_RESULTS%/%OS%/%VERSION%/%COMPATIBILITY_MODE%?src=seamonkey");
-pref("extensions.getAddons.themes.browseURL", "https://addons.thunderbird.net/%LOCALE%/thunderbird/themes/?src=seamonkey");
-pref("extensions.getAddons.siteRegExp", "^https://.*addons\\.thunderbird\\.net");
-pref("extensions.webservice.discoverURL", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/discovery/pane/%VERSION%/%OS%");
+pref("extensions.getAddons.get.url", "");
+pref("extensions.getAddons.getWithPerformance.url", "");
+pref("extensions.getAddons.compatOverides.url", "");
+pref("extensions.getAddons.link.url", "");
+pref("extensions.getAddons.recommended.url", "");
+pref("extensions.getAddons.search.browseURL", "");
+pref("extensions.getAddons.search.url", "");
+pref("extensions.getAddons.themes.browseURL", "");
+pref("extensions.getAddons.siteRegExp", "");
+pref("extensions.webservice.discoverURL", "");
 
 // Blocklist preferences
-pref("extensions.blocklist.url", "https://live.thunderbird.net/blocklists.settings/v1/blocklist/3/%APP_ID%/%APP_VERSION%/%PRODUCT%/%BUILD_ID%/%BUILD_TARGET%/%LOCALE%/%CHANNEL%/%OS_VERSION%/%DISTRIBUTION%/%DISTRIBUTION_VERSION%/%PING_COUNT%/%TOTAL_PING_COUNT%/%DAYS_SINCE_LAST_PING%/");
-pref("extensions.blocklist.detailsURL", "https://live.thunderbird.net/blocked.cdn/");
-pref("extensions.blocklist.itemURL", "https://live.thunderbird.net/blocked.cdn/%blockID%.html");
+pref("extensions.blocklist.url", "");
+pref("extensions.blocklist.detailsURL", "");
+pref("extensions.blocklist.itemURL", "");
 
 // Update preferences for installed Extensions and Themes.
 // Symmetric (can be overridden by individual extensions),
@@ -586,14 +586,14 @@ pref("extensions.blocklist.itemURL", "https://live.thunderbird.net/blocked.cdn/%
 //
 pref("extensions.update.autoUpdateDefault", true); // Download and install automatically
 pref("extensions.update.enabled", true);
-pref("extensions.update.url", "https://versioncheck.addons.thunderbird.net/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=%APP_OS%&appABI=%APP_ABI%&locale=%APP_LOCALE%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%&compatMode=%COMPATIBILITY_MODE%");
-pref("extensions.update.background.url", "https://versioncheck-bg.addons.thunderbird.net/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=%APP_OS%&appABI=%APP_ABI%&locale=%APP_LOCALE%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%&compatMode=%COMPATIBILITY_MODE%");
+pref("extensions.update.url", "");
+pref("extensions.update.background.url", "");
 // Check for updates to Extensions and Themes every day
 pref("extensions.update.interval", 86400);
 
 // getMoreThemes is used by our UI under our switch theme menu
-pref("extensions.getMoreThemesURL", "https://addons.thunderbird.net/%LOCALE%/%APP%/complete-themes/");
-pref("extensions.getPersonasURL", "https://addons.thunderbird.net/%LOCALE%/%APP%/themes/?sort=up-and-coming");
+pref("extensions.getMoreThemesURL", "");
+pref("extensions.getPersonasURL", "");
 pref("extensions.dss.enabled", false);          // Dynamic Skin Switching
 // Non-dynamic switch pending after next restart.
 pref("extensions.dss.switchPending", false);
@@ -631,9 +631,9 @@ pref("browser.taskbar.previews.max", 20);
 pref("browser.taskbar.previews.cachetime", 5);
 #endif
 
-pref("sidebar.customize.all_panels.url", "http://sidebar-rdf.netscape.com/%LOCALE%/sidebar-rdf/%SIDEBAR_VERSION%/all-panels.rdf");
-pref("sidebar.customize.directory.url", "https://edmullen.net/mozilla/moz_sidebar.php");
-pref("sidebar.customize.more_panels.url", "https://edmullen.net/mozilla/moz_sidebar.php");
+pref("sidebar.customize.all_panels.url", "");
+pref("sidebar.customize.directory.url", "");
+pref("sidebar.customize.more_panels.url", "");
 pref("sidebar.num_tabs_in_view", 8);
 
 pref("browser.throbber.url","chrome://navigator-region/locale/region.properties");
@@ -709,8 +709,8 @@ pref("dom.ipc.plugins.enabled", true);
 #endif
 
 // plugin finder service url
-pref("pfs.datasource.url", "https://pfs.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%");
-pref("plugins.update.url", "https://www.mozilla.org/%LOCALE%/plugincheck/");
+pref("pfs.datasource.url", "");
+pref("plugins.update.url", "");
 pref("plugins.update.notifyUser", false);
 pref("plugins.hide_infobar_for_outdated_plugin", false);
 pref("plugins.hide_infobar_for_carbon_failure_plugin", false);
@@ -759,7 +759,7 @@ pref("layout.word_select.stop_at_punctuation", false);
 #endif
 
 // The breakpad report server to link to in about:crashes
-pref("breakpad.reportURL", "http://crash-stats.mozilla.com/report/index/");
+pref("breakpad.reportURL", "");
 
 // Name of alternate about: page for certificate errors (when undefined, defaults to about:neterror)
 pref("security.alternate_certificate_error_page", "certerror");
@@ -789,7 +789,7 @@ pref("geo.provider.use_gpsd", false);
 #endif
 
 // FAQ URLs
-pref("browser.geolocation.warning.infoURL", "http://www.seamonkey-project.org/doc/2.0/geolocation");
+pref("browser.geolocation.warning.infoURL", "");
 
 pref("browser.rights.version", 1);
 pref("browser.rights.1.shown", false);
@@ -809,4 +809,4 @@ pref("full-screen-api.enabled", true);
 pref("plugin.load_flash_only", false);
 
 // Url shown when you type moz://a
-pref("toolkit.mozprotocol.url", "http://www.seamonkey-project.org/");
+pref("toolkit.mozprotocol.url", "");

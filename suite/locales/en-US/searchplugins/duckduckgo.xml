@@ -13,7 +13,6 @@
 </Url>
 <Url type="text/html" method="GET" template="https://duckduckgo.com/" rel="searchform">
   <Param name="q" value="{searchTerms}"/>
-  <Param name="t" value="seamonkey"/>
 </Url>
 <SearchForm>https://duckduckgo.com/</SearchForm>
 </SearchPlugin>
