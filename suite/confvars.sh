@@ -12,7 +12,7 @@ MOZ_SUITE=1
 MOZ_MAILNEWS=1
 MOZ_BRANDING_DIRECTORY=suite/branding/unofficial
 MOZ_OFFICIAL_BRANDING_DIRECTORY=suite/branding/official
-MOZ_EXTENSIONS_DEFAULT=" inspector irc gio"
+MOZ_EXTENSIONS_DEFAULT=" gio"
 MOZ_UPDATER=1
 # This should usually be the same as the value MAR_CHANNEL_ID.
 # If more than one ID is needed, then you should use a comma separated list
