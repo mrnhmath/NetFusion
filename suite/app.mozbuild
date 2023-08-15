@@ -7,6 +7,12 @@ include('/toolkit/toolkit.mozbuild')
 
 if CONFIG['MOZ_EXTENSIONS']:
     DIRS += ['/extensions']
+	
+if CONFIG['MOZ_IRC']:
+    DIRS += ['/extensions/irc']
+	
+if CONFIG['MOZ_INSPECTOR']:
+    DIRS += ['/extensions/inspector']
 
 if CONFIG['MOZ_COMPOSER']:
     DIRS += ['/suite/editor/ui']

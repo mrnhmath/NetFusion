@@ -10,3 +10,21 @@ AC_SUBST(MOZ_SUITE)
 AC_SUBST(MOZ_COMPOSER)
 AC_SUBST(NETFUSION_VERSION)
 AC_DEFINE(MOZ_SEPARATE_MANIFEST_FOR_THEME_OVERRIDES)
+
+dnl =========================================================
+dnl = ChatZilla
+dnl =========================================================
+MOZ_ARG_ENABLE_BOOL(irc,
+[  --enable-irc        Enable building of the ChatZilla extension],
+    MOZ_IRC=1,
+    MOZ_IRC= )
+AC_SUBST(MOZ_IRC)
+
+dnl =========================================================
+dnl = DOM Inspector
+dnl =========================================================
+MOZ_ARG_ENABLE_BOOL(inspector,
+[  --enable-inspector  Enable building of the DOM Inspector extension],
+    MOZ_INSPECTOR=1,
+    MOZ_INSPECTOR= )
+AC_SUBST(MOZ_INSPECTOR)

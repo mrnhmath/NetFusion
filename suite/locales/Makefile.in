@@ -122,7 +122,9 @@ libs-%:
 	$(NSINSTALL) -D $(DIST)/install
 	@$(MAKE) -C $(DEPTH)/toolkit/locales libs-$*
 	@$(MAKE) -C ../../suite/editor/ui/locales AB_CD=$* XPI_NAME=locale-$*
+ifdef MOZ_IRC
 	@$(MAKE) -C $(DEPTH)/extensions/irc/locales libs-$*
+endif
 	@$(MAKE) -C $(DEPTH)/extensions/spellcheck/locales AB_CD=$* XPI_NAME=locale-$*
 	@$(MAKE) -C $(DEPTH)/intl/locales AB_CD=$* XPI_NAME=locale-$*
 	@$(MAKE) libs AB_CD=$* XPI_NAME=locale-$* PREF_DIR=defaults/pref
@@ -162,7 +164,9 @@ clobber-zip:
 repackage-zip: repackage-extensions
 
 repackage-extensions: $(STAGEDIST)
+ifdef MOZ_IRC
 	$(MAKE) -C $(DEPTH)/extensions/irc/locales repackage-zip-$(AB_CD) STAGEDIST=$(STAGEDIST)
+endif
 ifeq ($(MOZ_PACKAGER_FORMAT),omni)
 	$(MAKE) -C ../app pack-ext AB_CD=$(AB_CD) STAGEDIST=$(STAGEDIST)/extensions;
 	$(MAKE) -C ../app pack-ext AB_CD=$(AB_CD) STAGEDIST=$(STAGEDIST)/distribution/extensions;

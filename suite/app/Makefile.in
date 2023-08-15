@@ -97,8 +97,9 @@ pack-ext: $(STAGEDIST)
 
 tools::
 	@$(MAKE) pack-ext STAGEDIST="$(DIST)/bin/extensions"
+ifneq "$(or $(MOZ_IRC),$(MOZ_INSPECTOR))" ""
 	@$(MAKE) pack-ext STAGEDIST="$(DIST)/bin/distribution/extensions"
-
+endif
 endif
 
 ifeq (cocoa,$(MOZ_WIDGET_TOOLKIT))
