@@ -1,3 +1,9 @@
 [submodule "platform"]
 	path = platform
 	url = https://repo.palemoon.org/MoonchildProductions/UXP.git
+[submodule "extensions/inspector"]
+	path = extensions/inspector
+	url = https://repo.palemoon.org/mrnhmath/inspector.git
+[submodule "extensions/irc"]
+	path = extensions/irc
+	url = https://repo.palemoon.org/mrnhmath/irc.git
