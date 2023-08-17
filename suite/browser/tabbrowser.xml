@@ -347,7 +347,9 @@
           <![CDATA[
             var browsers = this.browsers;
             for (var i = 0; i < browsers.length; i++)
-              if (browsers[i].contentDocument == aDocument)
+			if (!browsers[i])
+				return;
+            else if (browsers[i].contentDocument == aDocument)
                 return i;
             return -1;
           ]]>
