@@ -6,11 +6,9 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 .tabbrowser-strip {
-  min-height: 0px;
-  padding: 0px;
-  /* 1px ThreeDShadow bottom border that doesn't take up space and that
-     selected panel can just draw over */
-  box-shadow: 0px -1px ThreeDShadow inset;
+  padding-bottom: 3px;
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
 }
 
 tabpanels {
@@ -24,13 +22,11 @@ tabpanels {
 .tabs-left,
 .tabs-right {
   width: 3px;
-  border-bottom: none;
 }
 
 .tab-icon {
   margin-top: 1px;
-  margin-inline-start: 1px;
-  margin-inline-end: 4px;
+  margin-right: 3px;
   width: 16px;
   height: 16px;
 }
@@ -44,12 +40,6 @@ tabpanels {
 
 .tabbrowser-tab[busy] {
   list-style-image: url("chrome://communicator/skin/icons/loading.gif");
-}
-
-.tabbrowser-tab[selected="true"] {
-  margin-bottom: 0px;
-  padding-top: 2px; /* compensates the top margin of background tabs */
-  padding-bottom: 3px; /* compensates the bottom margin of background tabs */
 }
 
 .tabbrowser-tab:-moz-lwtheme {
