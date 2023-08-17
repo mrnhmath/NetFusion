@@ -452,16 +452,12 @@ nsBrowserAccess.prototype = {
         var isRelated = referrer ? true : false;
         // If we have an opener, that means that the caller is expecting access
         // to the nsIDOMWindow of the opened tab right away.
-        let userContextId = aOpener && aOpener.document
-                            ? aOpener.document.nodePrincipal.originAttributes.userContextId
-                           : Components.interfaces.nsIScriptSecurityManager.DEFAULT_USER_CONTEXT_ID;
         let openerWindow = (aFlags & nsIBrowserDOMWindow.OPEN_NO_OPENER) ? null : aOpener;
 
         var newTab = gBrowser.loadOneTab(uri, {inBackground: bgLoad,
                                                fromExternal: isExternal,
                                                relatedToCurrent: isRelated,
                                                referrerURI: referrer,
-                                               userContextId: userContextId,
                                                opener: openerWindow,
                                                });
         var contentWin = gBrowser.getBrowserForTab(newTab).contentWindow;
@@ -1929,9 +1925,6 @@ function handleDroppedLink(event, urlOrLinks, name)
 
   let lastLocationChange = gBrowser.selectedBrowser.lastLocationChange;
 
-  // Usually blank for SeaMonkey.
-  let userContextId = gBrowser.selectedBrowser.getAttribute("usercontextid");
-
   // event is null if links are dropped in content process.
   // inBackground should be false, as it's loading into current browser.
   let inBackground = false;
@@ -1955,7 +1948,6 @@ function handleDroppedLink(event, urlOrLinks, name)
         replace: true,
         allowThirdPartyFixup: false,
         postDatas,
-        userContextId,
       });
     }
   });

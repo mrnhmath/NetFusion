@@ -1450,7 +1450,6 @@
                 postData: aPostData,
                 inBackground: aLoadInBackground,
                 allowThirdPartyFixup: aAllowThirdPartyFixup,
-                userContextId: null,
                 opener: null,
               };
             }
@@ -1471,7 +1470,6 @@
         <body><![CDATA[
           let aAllowThirdPartyFixup;
           let aPostDatas = [];
-          let aUserContextId;
 
           // Additional parameters are in a params object.
           // Firefox uses additional parameters not supported here.
@@ -1482,7 +1480,6 @@
             aReplace              = params.replace;
             aAllowThirdPartyFixup = params.allowThirdPartyFixup;
             aPostDatas            = params.postDatas || aPostDatas;
-            aUserContextId        = params.userContextId;
           }
 
           if (!aURIs.length)
@@ -1527,7 +1524,6 @@
               ownerTab: owner,
               allowThirdPartyFixup: aAllowThirdPartyFixup,
               postData: aPostDatas[0],
-              userContextId: aUserContextId
             });
           }
 
@@ -1536,7 +1532,6 @@
             let tab = this.addTab(aURIs[i], {
               allowThirdPartyFixup: aAllowThirdPartyFixup,
               postData: aPostDatas[i],
-              userContextId: aUserContextId
             });
             if (targetTabIndex !== -1)
               this.moveTabTo(tab, ++tabNum);
@@ -1563,7 +1558,6 @@
           <![CDATA[
             var aFromExternal;
             var aRelatedToCurrent;
-            var aUserContextId;
             var aOpener;
             if (arguments.length == 2 &&
                 arguments[1] != null &&
@@ -1577,7 +1571,6 @@
               aAllowThirdPartyFixup = params.allowThirdPartyFixup;
               aFromExternal         = params.fromExternal;
               aRelatedToCurrent     = params.relatedToCurrent;
-              aUserContextId        = params.userContextId;
               aOpener               = params.opener;
             }
 
