@@ -19,10 +19,6 @@
       <preference id="privacy.donottrackheader.enabled"
                   name="privacy.donottrackheader.enabled"
                   type="bool"/>
-      <preference id="privacy.trackingprotection.enabled"
-                  name="privacy.trackingprotection.enabled"
-                  type="bool"
-                  onchange="SetWarnTrackEnabled(this.value);"/>
       <preference id="privacy.warn_tracking_content"
                   name="privacy.warn_tracking_content"
                   type="bool"/>
@@ -42,10 +38,6 @@
                 label="&doNotTrack.label;"
                 accesskey="&doNotTrack.accesskey;"
                 preference="privacy.donottrackheader.enabled"/>
-      <checkbox id="trackProtect"
-                label="&trackProtect.label;"
-                accesskey="&trackProtect.accesskey;"
-                preference="privacy.trackingprotection.enabled"/>
       <checkbox id="warnTrackContent"
                 class="indent"
                 label="&warnTrackContent.label;"
