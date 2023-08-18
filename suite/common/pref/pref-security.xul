@@ -16,8 +16,8 @@
             script="chrome://communicator/content/pref/pref-security.js">
     <preferences id="security_preferences">
       <!-- User Tracking -->
-      <preference id="privacy.donottrackheader.enabled"
-                  name="privacy.donottrackheader.enabled"
+      <preference id="privacy.GPCheader.enabled"
+                  name="privacy.GPCheader.enabled"
                   type="bool"/>
       <preference id="privacy.warn_tracking_content"
                   name="privacy.warn_tracking_content"
@@ -34,10 +34,10 @@
       <caption label="&tracking.label;"/>
 
       <description>&trackingIntro.label;</description>
-      <checkbox id="doNotTrack"
-                label="&doNotTrack.label;"
-                accesskey="&doNotTrack.accesskey;"
-                preference="privacy.donottrackheader.enabled"/>
+      <checkbox id="privacyGPCCheckbox"
+                label="&sendGPCheader.label;"
+                accesskey="&sendGPCheader.accesskey;"
+                preference="privacy.GPCheader.enabled"/>
       <checkbox id="warnTrackContent"
                 class="indent"
                 label="&warnTrackContent.label;"
