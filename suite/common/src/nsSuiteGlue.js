@@ -207,12 +207,12 @@ SuiteGlue.prototype = {
         break;
       case "browser-search-engine-modified":
         break;
-//      case "notifications-open-settings":
-//        // Since this is a web notification, there's probably a browser window.
-//        var mostRecentBrowserWindow = Services.wm.getMostRecentWindow("navigator:browser");
-//        if (mostRecentBrowserWindow)
-//          mostRecentBrowserWindow.toDataManager("|permissions");
-//        break;
+      case "notifications-open-settings":
+        // Since this is a web notification, there's probably a browser window.
+        var mostRecentBrowserWindow = Services.wm.getMostRecentWindow("navigator:browser");
+        if (mostRecentBrowserWindow)
+          mostRecentBrowserWindow.viewNotifications();
+        break;
       case "timer-callback":
         // Load the Login Manager data from disk off the main thread, some time
         // after startup.  If the data is required before the timeout, for example
