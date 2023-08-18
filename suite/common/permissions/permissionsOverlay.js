@@ -55,6 +55,10 @@ function viewOfflineData() {
   showPermissionsManager("offline-app", "");
 }
 
+function viewNotifications() {
+  showPermissionsManager("desktop-notification", "");
+}
+
 function viewCookies() {
   openCookieViewer("cookieManager");
 }  
