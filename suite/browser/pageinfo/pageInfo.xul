@@ -7,18 +7,20 @@
 <?xml-stylesheet href="chrome://navigator/content/pageinfo/pageInfo.css" type="text/css"?>
 <?xml-stylesheet href="chrome://navigator/skin/pageInfo.css" type="text/css"?>
 
-<!DOCTYPE window [
+<!DOCTYPE dialog [
   <!ENTITY % pageInfoDTD SYSTEM "chrome://navigator/locale/pageInfo.dtd">
   %pageInfoDTD;
 ]>
 
-<window id="main-window"
+<dialog id="main-window"
+  buttons="help"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   windowtype="Browser:page-info"
   onload="onLoadPageInfo()"
   onunload="onUnloadPageInfo()"
   align="stretch" style="&pageInfoWindow.dimensions;"
-  persist="screenX screenY width height sizemode">
+  persist="screenX screenY width height sizemode"
+  ondialoghelp="doHelpButton();">
 
   <script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>
   <script type="application/javascript" src="chrome://global/content/contentAreaUtils.js"/>
@@ -604,4 +606,4 @@
       <!-- Others added by overlay -->
     </tabpanels>
   </tabbox>
-</window>
+</dialog>

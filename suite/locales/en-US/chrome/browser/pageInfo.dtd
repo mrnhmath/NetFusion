@@ -5,7 +5,7 @@
 -->
 
 <!-- Note to localizers, don't localize the strings 'width' or 'height' -->
-<!ENTITY  pageInfoWindow.dimensions  "width: 100ch; height: 38em;">
+<!ENTITY  pageInfoWindow.dimensions  "width: 100ch; height: 45em;">
 
 <!ENTITY  copy.key               "C">
 <!ENTITY  copy.label             "Copy">
