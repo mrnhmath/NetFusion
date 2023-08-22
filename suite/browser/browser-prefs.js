@@ -800,6 +800,3 @@ pref("full-screen-api.enabled", true);
 
 // Enable general plugin loading.
 pref("plugin.load_flash_only", false);
-
-// Url shown when you type moz://a
-pref("toolkit.mozprotocol.url", "");
