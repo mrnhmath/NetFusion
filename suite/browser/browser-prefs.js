@@ -718,9 +718,6 @@ pref("plugins.hide_infobar_for_missing_plugin", false);
 pref("plugins.click_to_play", true);
 pref("plugin.disable", false);
 
-// Digital Rights Management, Encrypted Media Extensions
-pref("media.eme.enabled", false);
- 
 // Turn off WebRTC by default (bug 1419507)
 pref("media.navigator.enabled", false);
 pref("media.peerconnection.enabled", false);
