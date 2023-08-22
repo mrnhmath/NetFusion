@@ -718,10 +718,6 @@ pref("plugins.hide_infobar_for_missing_plugin", false);
 pref("plugins.click_to_play", true);
 pref("plugin.disable", false);
 
-// Turn off WebRTC by default (bug 1419507)
-pref("media.navigator.enabled", false);
-pref("media.peerconnection.enabled", false);
-
 #ifndef XP_MACOSX
 // Restore the spinner that was removed in bug 481359
 pref("ui.use_activity_cursor", true);
