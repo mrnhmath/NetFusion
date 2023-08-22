@@ -797,6 +797,3 @@ pref("browser.rights.override", true);
 
 // Enable the DOM fullscreen API.
 pref("full-screen-api.enabled", true);
-
-// Enable general plugin loading.
-pref("plugin.load_flash_only", false);
