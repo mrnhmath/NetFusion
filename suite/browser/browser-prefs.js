@@ -88,9 +88,6 @@ pref("browser.dom.window.console.enabled", false);
 // Use the findbar instead of the dialog box
 pref("browser.findbar.enabled", true);
 
-// Use doorhanger notifications instead of the notification bar
-pref("browser.doorhanger.enabled", true);
-
 // search engines URL
 pref("browser.search.searchEnginesURL", "");
 

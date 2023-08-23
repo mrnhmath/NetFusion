@@ -156,15 +156,7 @@
                  oncommand="openCertManager();"/>
     </menupopup>
 
-    <popupnotification id="password-notification" hidden="true">
-      <popupnotificationcontent orient="vertical">
-        <textbox id="password-notification-username"/>
-        <textbox id="password-notification-password" type="password" show-content=""/>
-        <checkbox id="password-notification-visibilityToggle" hidden="true"/>
-      </popupnotificationcontent>
-    </popupnotification>
-
-  </popupset>
+</popupset>
 
   <!-- context menu -->
   <popupset id="contentAreaContextSet"/>
@@ -330,7 +322,7 @@
             <image id="ev-button" hidden="true"
                    onclick="if (event.button == 0) BrowserPageInfo(null, 'securityTab');"/>
             <image id="star-button"
-                   onclick="PlacesStarButton.onClick(event);"/>
+                   onclick="PlacesCommandHook.bookmarkPageAs(gBrowser.selectedBrowser, PlacesUtils.bookmarksMenuFolderId)"/>
           </hbox>
           <menupopup id="ubhist-popup" class="autocomplete-history-popup"
                      popupalign="topleft" popupanchor="bottomleft"

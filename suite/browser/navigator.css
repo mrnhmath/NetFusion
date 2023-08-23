@@ -96,22 +96,6 @@ searchbar {
   display: none;
 }
 
-#click-to-play-plugins-notification {
-  -moz-binding: url("chrome://communicator/content/bindings/notification.xml#click-to-play-plugins-notification");
-}
-
-popupnotification-centeritem {
-  -moz-binding: url("chrome://communicator/content/bindings/notification.xml#center-item");
-}
-
-#geolocation-notification {
-  -moz-binding: url("chrome://communicator/content/bindings/notification.xml#geolocation-popup-notification");
-}
-
-#addon-install-started-notification {
-  -moz-binding: url("chrome://communicator/content/bindings/notification.xml#addon-progress-popup-notification");
-}
-
 /* ::::: Wallpaper fix for Bug 435652. Remove when Bug 204743 is fixed ::::: */
 
 .textbox-input-box {

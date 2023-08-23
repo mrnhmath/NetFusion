@@ -16,10 +16,6 @@ toolbar[printpreview="true"] {
   -moz-binding: url("chrome://communicator/content/bindings/notification.xml#browser-notificationbox");
 }
 
-.browser-notificationbox[popupnotification="true"] {
-  -moz-binding: url("chrome://communicator/content/bindings/notification.xml#popup-notification");
-}
-
 notification[value="addon-install-started"] {
   -moz-binding: url("chrome://communicator/content/bindings/notification.xml#addon-progress-notification");
 }

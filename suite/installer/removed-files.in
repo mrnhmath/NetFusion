@@ -990,7 +990,6 @@ Throbber-small.gif
   @DIR_MACOS@modules/PlacesUtils.jsm
   @DIR_MACOS@modules/PluginProvider.jsm
   @DIR_MACOS@modules/PluralForm.jsm
-  @DIR_MACOS@modules/PopupNotifications.jsm
   @DIR_MACOS@modules/Sanitizer.jsm
   @DIR_MACOS@modules/Services.jsm
   @DIR_MACOS@modules/StringBundle.js

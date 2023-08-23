@@ -335,8 +335,6 @@ nsBrowserStatusHandler.prototype =
         SetPageProxyState("invalid", null);
       }
 
-      PlacesStarButton.updateState();
-
       this.feedsMenu.setAttribute("disabled", "true");
       this.feedsButton.hidden = true;
       this.feeds = [];

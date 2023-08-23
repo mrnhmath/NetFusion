@@ -7,7 +7,7 @@
 <!-- LOCALIZATION NOTE (closeNotificationItem.label): This entity is used
      to replace the Toolkit default closeNotificationItem.label ("Not Now")
      which is ambiguous in some cases. Thus, make sure to select a phrase
-     that clearly relates to closing the current doorhanger. -->
+     that clearly relates to closing the current notification box. -->
 <!ENTITY closeNotificationItem.label "Dismiss Notification">
 
 <!ENTITY checkForUpdates "Check for updates…">
