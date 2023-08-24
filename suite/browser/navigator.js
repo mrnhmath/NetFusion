@@ -738,10 +738,6 @@ function Startup()
 
   PlacesToolbarHelper.init();
 
-  gBrowser.mPanelContainer.addEventListener("InstallBrowserTheme", LightWeightThemeWebInstaller, false, true);
-  gBrowser.mPanelContainer.addEventListener("PreviewBrowserTheme", LightWeightThemeWebInstaller, false, true);
-  gBrowser.mPanelContainer.addEventListener("ResetBrowserThemePreview", LightWeightThemeWebInstaller, false, true);
-
   AeroPeek.onOpenWindow(window);
 
   if (!gPrivate) {
@@ -2754,120 +2750,6 @@ function BrowserToolboxCustomizeDone(aToolboxChanged)
 function BrowserToolboxCustomizeChange(event)
 {
   toolboxCustomizeChange(getNavToolbox(), event);
-}
-
-var LightWeightThemeWebInstaller = {
-  handleEvent: function (event) {
-    switch (event.type) {
-      case "InstallBrowserTheme":
-      case "PreviewBrowserTheme":
-      case "ResetBrowserThemePreview":
-        // ignore requests from background tabs
-        if (event.target.ownerDocument.defaultView.top != content)
-          return;
-    }
-    switch (event.type) {
-      case "InstallBrowserTheme":
-        this._installRequest(event);
-        break;
-      case "PreviewBrowserTheme":
-        this._preview(event);
-        break;
-      case "ResetBrowserThemePreview":
-        this._resetPreview(event);
-        break;
-      case "pagehide":
-      case "TabSelect":
-        this._resetPreview();
-        break;
-    }
-  },
-
-  get _manager () {
-    delete this._manager;
-    return this._manager = LightweightThemeManager;
-  },
-
-  _installRequest: function (event) {
-    var node = event.target;
-    var data = this._getThemeFromNode(node);
-    if (!data)
-      return;
-
-    if (this._isAllowed(node)) {
-      this._install(data);
-      return;
-    }
-
-    this._removePreviousNotifications();
-    getBrowser().getNotificationBox().lwthemeInstallRequest(
-        node.ownerDocument.location.host,
-        this._install.bind(this, data));
-  },
-
-  _install: function (newTheme) {
-    this._removePreviousNotifications();
-
-    var previousTheme = this._manager.currentTheme;
-    this._manager.currentTheme = newTheme;
-    if (this._manager.currentTheme &&
-        this._manager.currentTheme.id == newTheme.id)
-      getBrowser().getNotificationBox().lwthemeInstallNotification(function() {
-        LightWeightThemeWebInstaller._manager.forgetUsedTheme(newTheme.id);
-        LightWeightThemeWebInstaller._manager.currentTheme = previousTheme;
-      });
-    else
-      getBrowser().getNotificationBox().lwthemeNeedsRestart(newTheme.name);
-
-    // We've already destroyed the permission notification,
-    // so tell the former that it's closed already.
-    return true;
-  },
-
-  _removePreviousNotifications: function () {
-    getBrowser().getNotificationBox().removeNotifications(
-        ["lwtheme-install-request", "lwtheme-install-notification"]);
-  },
-
-  _previewWindow: null,
-  _preview: function (event) {
-    if (!this._isAllowed(event.target))
-      return;
-
-    var data = this._getThemeFromNode(event.target);
-    if (!data)
-      return;
-
-    this._resetPreview();
-
-    this._previewWindow = event.target.ownerDocument.defaultView;
-    this._previewWindow.addEventListener("pagehide", this, true);
-    gBrowser.tabContainer.addEventListener("TabSelect", this, false);
-
-    this._manager.previewTheme(data);
-  },
-
-  _resetPreview: function (event) {
-    if (!this._previewWindow ||
-        event && !this._isAllowed(event.target))
-      return;
-
-    this._previewWindow.removeEventListener("pagehide", this, true);
-    this._previewWindow = null;
-    gBrowser.tabContainer.removeEventListener("TabSelect", this, false);
-
-    this._manager.resetPreview();
-  },
-
-  _isAllowed: function (node) {
-    var uri = node.ownerDocument.documentURIObject;
-    return Services.perms.testPermission(uri, "install") == Services.perms.ALLOW_ACTION;
-  },
-
-  _getThemeFromNode: function (node) {
-    return this._manager.parseTheme(node.getAttribute("data-browsertheme"),
-                                    node.baseURI);
-  }
 }
 
 function AddKeywordForSearchField() {

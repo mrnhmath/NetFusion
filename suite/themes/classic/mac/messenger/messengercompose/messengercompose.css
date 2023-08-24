@@ -233,17 +233,3 @@ treechildren::-moz-tree-image(subscribed-news) {
 .menulist-compact  > .menulist-label-box > .menulist-label {
   text-align: end;
 }
-
-/* ::::: lightweight themes ::::: */
-
-#MsgHeadersToolbar:-moz-lwtheme,
-#FormatToolbar:-moz-lwtheme,
-#compose-toolbar-sizer:-moz-lwtheme {
-  text-shadow: none;
-  color: -moz-dialogtext;
-  background-color: -moz-dialog;
-}
-
-#MsgHeadersToolbar textbox:-moz-lwtheme {
-  opacity: 1;
-}

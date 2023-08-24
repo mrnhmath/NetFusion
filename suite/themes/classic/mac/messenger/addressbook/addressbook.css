@@ -372,11 +372,3 @@ html|a {
 html|p {
   border: none !important;
 }
-
-/* ::::: lightweight themes ::::: */
-
-#CardViewOuterBox:-moz-lwtheme {
-  background-color: -moz-dialog;
-  color: -moz-dialogtext;
-  text-shadow: none
-}

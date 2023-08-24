@@ -129,14 +129,6 @@ tabpanels {
   font-weight: bold;
 }
 
-.tabmail-tab:-moz-lwtheme:not([selected="true"]) {
-  opacity: .8;
-}
-
-.tabmail-tab:-moz-lwtheme {
-  text-shadow: none;
-}
-
 .alltabs-item[tabIsScrolled] {
   font-style: italic;
 }

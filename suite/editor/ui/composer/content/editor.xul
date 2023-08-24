@@ -38,8 +38,6 @@
         titlemodifier="&editorWindow.titlemodifier;"
         titlemenuseparator="&editorWindow.titlemodifiermenuseparator;"
         toggletoolbar="true"
-        lightweightthemes="true"
-        lightweightthemesfooter="status-bar"
         windowtype="composer:html"
         macanimationtype="document"
         drawtitle="true"

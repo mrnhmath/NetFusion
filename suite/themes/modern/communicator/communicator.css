@@ -146,9 +146,7 @@ toolbar[iconsize="small"] > #print-button[disabled="true"] {
 .messageImage[value="addon-install-complete"],
 .messageImage[value="addon-install-disabled"],
 .messageImage[value="addon-install-failed"],
-.messageImage[value="addon-install-started"],
-.messageImage[value="lwtheme-install-request"],
-.messageImage[value="lwtheme-install-notification"] {
+.messageImage[value="addon-install-started"] {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png");
 }
 

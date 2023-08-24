@@ -27,8 +27,6 @@
         height="500"
         persist="width height screenX screenY sizemode"
         toggletoolbar="true"
-        lightweightthemes="true"
-        lightweightthemesfooter="status-bar"
         macanimationtype="document"
         drawtitle="true"
         windowtype="mail:messageWindow">

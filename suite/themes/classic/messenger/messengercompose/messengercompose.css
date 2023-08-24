@@ -315,19 +315,3 @@ treechildren::-moz-tree-image(subscribed-news) {
 #FontFaceSelect {
   max-width: 35ch;
 }
-
-/* ::::: lightweight themes ::::: */
-
-#MsgHeadersToolbar:-moz-lwtheme,
-#FormatToolbar:-moz-lwtheme,
-#compose-toolbar-sizer:-moz-lwtheme {
-  text-shadow: none;
-  color: -moz-dialogtext;
-  background-color: -moz-dialog;
-}
-
-#MsgHeadersToolbar textbox:-moz-lwtheme,
-#MsgHeadersToolbar menulist:-moz-lwtheme,
-.formatting-button > menulist:-moz-lwtheme {
-  opacity: 1;
-}

@@ -29,8 +29,6 @@
         screenX="10" screenY="10"
         persist="width height screenX screenY sizemode"
         toggletoolbar="true"
-        lightweightthemes="true"
-        lightweightthemesfooter="status-bar"
         macanimationtype="document"
         drawtitle="true"
         windowtype="mail:3pane">

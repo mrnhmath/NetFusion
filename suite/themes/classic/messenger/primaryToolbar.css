@@ -506,10 +506,6 @@ toolbar[iconsize="small"] > #button-stop[disabled="true"] {
   color: black;
 }
 
-.msgNotificationBar:-moz-lwtheme {
-  text-shadow: none;
-}
-
 .messageImage[value="remoteContent"] {
   list-style-image: url("chrome://messenger/skin/icons/remote-blocked.png");
 }

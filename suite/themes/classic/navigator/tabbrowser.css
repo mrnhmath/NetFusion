@@ -42,16 +42,6 @@ tabpanels {
   list-style-image: url("chrome://communicator/skin/icons/loading.gif");
 }
 
-.tabbrowser-tab:-moz-lwtheme {
-  text-shadow: none;
-}
-
-.scrollbutton-up:-moz-lwtheme,
-.scrollbutton-down:-moz-lwtheme:not([selected="true"]),
-.tabbrowser-tab:-moz-lwtheme:not([selected="true"]) {
-  opacity: .8;
-}
-
 /* ::::: Tab scrollbox arrow, and all-tabs buttons ::::: */
 
 .scrollbutton-up,

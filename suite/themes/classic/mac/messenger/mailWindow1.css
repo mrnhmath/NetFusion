@@ -31,21 +31,12 @@
   height: 0px;
 }
 
-#messagepanebox:-moz-lwtheme {
-  background-color: -moz-dialog;
-}
-
 #searchToolbar {
   -moz-appearance: none;
   background-color: #CDCDCD;
   background-image: url("chrome://communicator/skin/toolbar/toolbar-gradient34.png");
   background-repeat: repeat-x;
   border-bottom: 1px solid #9F9F9F;
-}
-
-#searchToolbar:-moz-lwtheme {
-  background-image: none;
-  background-color: transparent;
 }
 
 /* Leopard-styled "zero-width" vertical splitter */
@@ -225,10 +216,6 @@
 .tabmail-strip {
   padding-bottom: 3px;
   background-color: #E8E8E8;
-}
-
-.tabmail-strip:-moz-lwtheme {
-  background-color: transparent;
 }
 
 .tab-close-button {

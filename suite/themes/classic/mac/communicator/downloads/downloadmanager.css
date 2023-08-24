@@ -17,11 +17,6 @@
   min-width: 0;
 }
 
-#clearListButton:-moz-lwtheme:not([disabled="true"]) {
-  color: inherit;
-  text-shadow: inherit;
-}
-
 treechildren::-moz-tree-image {
   margin-inline-start: -1px;
 }

@@ -590,7 +590,6 @@ pref("extensions.update.interval", 86400);
 
 // getMoreThemes is used by our UI under our switch theme menu
 pref("extensions.getMoreThemesURL", "");
-pref("extensions.getPersonasURL", "");
 pref("extensions.dss.enabled", false);          // Dynamic Skin Switching
 // Non-dynamic switch pending after next restart.
 pref("extensions.dss.switchPending", false);
@@ -605,8 +604,6 @@ pref("xpinstall.enabled", true);
 pref("xpinstall.signatures.required", false);
 // Built-in default permissions.
 pref("permissions.manager.defaultsUrl", "resource:///defaults/permissions");
-
-pref("lightweightThemes.update.enabled", true);
 
 // Customizable toolbar stuff
 pref("custtoolbar.personal_toolbar_folder", "");

@@ -196,11 +196,6 @@ toolbar[iconsize="small"] > #home-button[disabled="true"] {
   padding-bottom: 0px;
 }
 
-#FindToolbar:-moz-lwtheme {
-  -moz-border-top-colors: transparent;
-  -moz-border-bottom-colors: transparent;
-}
-
 /* ::::: fullscreen window controls ::::: */
 
 #window-controls {
@@ -583,19 +578,6 @@ toolbar[mode="icons"] #search-button > .button-box > .button-text {
   margin: 0px;
   color: #FFFFFF;
   text-shadow: none;
-}
-
-/* make same background-color translucent on lwthemes */
-#security-button[level="high"] > .statusbarpanel-contentbox:-moz-lwtheme {
-  background-color: rgba(232, 219, 153, .8);
-}
-
-#security-button[level="broken"] > .statusbarpanel-contentbox:-moz-lwtheme {
-  background-color: rgba(232, 52, 4, .8);
-}
-
-#security-button[label] > .statusbarpanel-contentbox:-moz-lwtheme {
-  background-color: rgba(98, 196, 65, .8);
 }
 
 #ev-button {

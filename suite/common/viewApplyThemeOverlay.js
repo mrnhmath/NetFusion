@@ -5,12 +5,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 Components.utils.import("resource://gre/modules/AddonManager.jsm");
-XPCOMUtils.defineLazyModuleGetter(this, "LightweightThemeManager",
-  "resource://gre/modules/LightweightThemeManager.jsm");
 
 var gThemes = [];
 var gApplyThemeBundle;
-var gBackgroundIsActive;
 
 function reloadThemes()
 {
@@ -44,25 +41,8 @@ function getNewThemes()
   }
 }
 
-function getPersonas()
-{
-  // get URL for more themes from prefs
-  try {
-    openTopWin(Services.urlFormatter.formatURLPref("extensions.getPersonasURL"));
-  }
-  catch (e) {
-    dump(e);
-  }
-}
-
 function checkTheme(popup)
 {
-  const ID_SUFFIX = "@personas.mozilla.org";
-  gBackgroundIsActive = false;
-
-  var usedThemes = LightweightThemeManager.usedThemes;
-  usedThemes = new Map(usedThemes.map( x => [x.id + ID_SUFFIX, x] ));
-
   while (popup.lastChild.localName != 'menuseparator')
     popup.lastChild.remove();
   gThemes.forEach(function(theme) {
@@ -77,31 +57,8 @@ function checkTheme(popup)
     else if (!(theme.permissions & AddonManager.PERM_CAN_ENABLE))
       menuitem.setAttribute("disabled", "true");
     menuitem.theme = theme;
-
-    var persona = usedThemes.get(theme.id);
-    if (persona) {
-      menuitem.persona = persona;
-      if (theme.isActive)
-        gBackgroundIsActive = true;
-    }
-
     popup.appendChild(menuitem);
   });
-}
-
-function previewTheme(event)
-{
-  if (!gBackgroundIsActive || !event.target.persona)
-    return;
-
-  switch (event.type) {
-    case "DOMMenuItemActive":
-      LightweightThemeManager.previewTheme(event.target.persona);
-      break;
-    case "DOMMenuItemInactive":
-      LightweightThemeManager.resetPreview();
-      break;
-  }
 }
 
 function restartApp()
@@ -157,16 +114,12 @@ function applyThemeOnLoad()
   removeEventListener("load", applyThemeOnLoad, false);
   addEventListener("unload", applyThemeOnUnload, false);
   var popup = document.getElementById("menu_viewApplyTheme_Popup");
-  popup.addEventListener("DOMMenuItemActive", previewTheme, false);
-  popup.addEventListener("DOMMenuItemInactive", previewTheme, false);
 }
 
 function applyThemeOnUnload()
 {
   AddonManager.removeAddonListener(gAddonListener);
   var popup = document.getElementById("menu_viewApplyTheme_Popup");
-  popup.removeEventListener("DOMMenuItemActive", previewTheme, false);
-  popup.removeEventListener("DOMMenuItemInactive", previewTheme, false);
 }
 
 addEventListener("load", applyThemeOnLoad, false);

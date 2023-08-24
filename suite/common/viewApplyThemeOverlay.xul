@@ -25,9 +25,6 @@
       <menuitem label="&getMoreThemesCmd.label;"
                 accesskey="&getMoreThemesCmd.accesskey;"
                 oncommand="getNewThemes();"/>
-      <menuitem label="&getBackgroundsCmd.label;"
-                accesskey="&getBackgroundsCmd.accesskey;"
-                oncommand="getPersonas();"/>
       <menuseparator/>
     </menupopup>
   </menu>

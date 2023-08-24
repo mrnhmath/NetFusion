@@ -45,8 +45,6 @@
         onfocus="EditorOnFocus()"
         title="&msgComposeWindow.title;"
         toggletoolbar="true"
-        lightweightthemes="true"
-        lightweightthemesfooter="status-bar"
         windowtype="msgcompose"
         macanimationtype="document"
         drawtitle="true"

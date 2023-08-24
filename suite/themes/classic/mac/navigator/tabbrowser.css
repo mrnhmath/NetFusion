@@ -68,29 +68,13 @@ tabpanels {
   padding: 4px 7px;
 }
 
-.tab-middle:-moz-lwtheme {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.tab-middle:-moz-lwtheme:not([selected="true"]) > .tab-text {
-  opacity: 0.8;
-}
-
 .tab-middle[selected="true"] {
   padding: 1px 7px 4px;
   background-color: #E8E8E8;
 }
 
-.tab-middle[selected="true"]:-moz-lwtheme {
-  background-color: transparent;
-}
-
 .tabbrowser-tab:hover > .tab-middle:not([selected="true"]) {
   background-color: rgba(0, 0, 0, 0.1);
-}
-
-.tabbrowser-tab:-moz-lwtheme:hover > .tab-middle:not([selected="true"]) {
-  background-color: rgba(0, 0, 0, 0.20);
 }
 
 .tabbrowser-tab[busy] {

@@ -26,8 +26,6 @@
         width="500" height="400" screenX="10" screenY="10"
         persist="width height screenX screenY sizemode"
         toggletoolbar="true"
-        lightweightthemes="true"
-        lightweightthemesfooter="status-bar"
         drawtitle="true"
         windowtype="Download:Manager">
 

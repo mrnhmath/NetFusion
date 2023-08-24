@@ -31,8 +31,6 @@
         titlemenuseparator="&mainWindow.titlemodifiermenuseparator;"
         titleprivate="&mainWindow.titleprivate;"
         toggletoolbar="true"
-        lightweightthemes="true"
-        lightweightthemesfooter="status-bar"
         windowtype="navigator:browser"
         macanimationtype="document"
         retargetdocumentfocus="urlbar"

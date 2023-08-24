@@ -129,17 +129,6 @@ textbox[enablehistory="true"] > .autocomplete-history-dropmarker {
   display: -moz-box;
 }
 
-/******* lightweight themes *******/
-window[lwtheme="true"] {
-  background-repeat: no-repeat;
-  background-position: top right;
-}
-
-statusbar[lwthemefooter="true"] {
-  background-repeat: no-repeat;
-  background-position: bottom left;
-}
-
 /******* autohide toolbars *******/
 
 toolbar[type="menubar"][autohide="true"]

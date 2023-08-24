@@ -14,11 +14,8 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#titlebar:not(:-moz-lwtheme) {
-  display: none;
-}
-
 #titlebar {
+  display: none;
   height: 22px;
   -moz-window-dragging: drag;
 }
@@ -31,10 +28,6 @@
 #titlebar-buttonbox-container:-moz-locale-dir(ltr) {
   -moz-box-ordinal-group: 0;
   -moz-box-align: start;
-}
-
-#titlebar-buttonbox-container:-moz-lwtheme {
-  margin-top: 3px;
 }
 
 #titlebar-buttonbox {
@@ -141,16 +134,6 @@ toolbar[iconsize="small"] > #print-button[disabled="true"] {
   -moz-image-region: rect(0 59px 19px 40px) !important;
 }
 
-/* ::::: lightweight themes ::::: */
-
-toolbar textbox:-moz-lwtheme:not([focused="true"]) {
-  opacity: 0.9;
-}
-
-treecols:-moz-lwtheme {
-  text-shadow: none;
-}
-
 /* ::::: notification bars ::::: */
 
 .messageImage[value="refresh-blocked"] {
@@ -185,9 +168,7 @@ treecols:-moz-lwtheme {
 .messageImage[value="addon-install-complete"],
 .messageImage[value="addon-install-disabled"],
 .messageImage[value="addon-install-failed"],
-.messageImage[value="addon-install-started"],
-.messageImage[value="lwtheme-install-request"],
-.messageImage[value="lwtheme-install-notification"] {
+.messageImage[value="addon-install-started"] {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png");
 }
 

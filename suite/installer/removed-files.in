@@ -977,8 +977,6 @@ Throbber-small.gif
   @DIR_MACOS@modules/ISO8601DateUtils.jsm
   @DIR_MACOS@modules/iteratorUtils.jsm
   @DIR_MACOS@modules/jsTreeSelection.js
-  @DIR_MACOS@modules/LightweightThemeConsumer.jsm
-  @DIR_MACOS@modules/LightweightThemeManager.jsm
   @DIR_MACOS@modules/mailnewsMigrator.js
   @DIR_MACOS@modules/MailUtils.js
   @DIR_MACOS@modules/Microformats.js
