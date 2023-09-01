@@ -58,3 +58,6 @@ MOZ_DEVTOOLS_SERVER=
 
 # Short-circuit Sync
 MOZ_SERVICES_SYNC=
+
+# Hard-disable Jetpack
+MOZ_JETPACK=
