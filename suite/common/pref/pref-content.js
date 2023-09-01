@@ -73,7 +73,7 @@ function AdjustMinZoom()
 }
 
 /**
- * When the user toggles the layers.acceleration.disabled pref,
+ * When the user toggles the layers.acceleration.enabled pref,
  * sync its new value to the gfx.direct2d.disabled pref too.
  */
 function updateHardwareAcceleration(aVal)
