@@ -37,7 +37,7 @@ pref("general.open_location.last_url",      "");
 pref("general.open_location.last_window_choice", 0);
 pref("browser.urlbar.historyEnabled",       true);
 
-pref("general.smoothScroll", false);
+pref("general.smoothScroll", true);
 pref("general.autoScroll", true);
 
 pref("general.useragent.compatMode.firefox", true);
