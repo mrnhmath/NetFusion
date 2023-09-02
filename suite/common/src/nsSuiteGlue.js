@@ -38,9 +38,6 @@ XPCOMUtils.defineLazyModuleGetter(this, "BookmarkJSONUtils",
 XPCOMUtils.defineLazyModuleGetter(this, "Task",
                                   "resource://gre/modules/Task.jsm");
 
-XPCOMUtils.defineLazyModuleGetter(this, "AppConstants",
-                                  "resource://gre/modules/AppConstants.jsm");
-
 // We try to backup bookmarks at idle times, to avoid doing that at shutdown.
 // Number of idle seconds before trying to backup bookmarks.  15 minutes.
 const BOOKMARKS_BACKUP_IDLE_TIME = 15 * 60;
@@ -526,9 +523,11 @@ SuiteGlue.prototype = {
     if (this._isPlacesDatabaseLocked)
       notifyBox.showPlacesLockedWarning();
 
+#ifdef MOZ_UPDATER
     // Detect if updates are off and warn for outdated builds.
     if (this._shouldShowUpdateWarning())
       notifyBox.showUpdateWarning();
+#endif
 
     this._checkForDefaultClient(aWindow);
   },
@@ -760,15 +759,12 @@ SuiteGlue.prototype = {
     Services.prefs.setBoolPref("browser.rights." + currentVersion + ".shown", true);
   },
 
+#ifdef MOZ_UPDATER
   /*
    * _shouldShowUpdateWarning - Determines if the user should be warned about
    * having updates off and an old build that likely should be updated.
    */
   _shouldShowUpdateWarning: function () {
-    // If the Updater is not available we don't show the warning.
-    if (!AppConstants.MOZ_UPDATER) {
-      return false;  
-    }
     // Look for an unconditional override pref. If set, do what it says.
     // (true --> never show, false --> always show)
     try {
@@ -795,6 +791,7 @@ SuiteGlue.prototype = {
     // We should warn if the build is older than the max age.
     return (buildTime + maxAge <= now);
   },
+#endif
 
   // This method gets the shell service and has it check its settings.
   // This will do nothing on platforms without a shell service.

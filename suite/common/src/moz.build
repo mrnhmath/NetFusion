@@ -10,10 +10,10 @@ EXTRA_COMPONENTS += [
     'nsSessionStartup.js',
     'nsSidebar.js',
     'nsSuiteDownloadManagerUI.js',
-    'nsSuiteGlue.js',
     'SuiteCommon.manifest',
 ]
 
 EXTRA_PP_COMPONENTS += [
     'nsSessionStore.js',
+    'nsSuiteGlue.js',
 ]

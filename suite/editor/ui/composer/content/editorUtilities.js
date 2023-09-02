@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 Components.utils.import("resource://gre/modules/Services.jsm");
-Components.utils.import("resource://gre/modules/AppConstants.jsm");
 
 /**** NAMESPACES ****/
 const XUL_NS = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
@@ -544,7 +543,7 @@ function MakeRelativeUrl(url)
   // We only return "urlPath", so we can convert the entire docPath for
   // case-insensitive comparisons.
   var doCaseInsensitive = (docScheme == "file" &&
-                           AppConstants.platform == "win");
+                           /Win/.test(navigator.platform));
 
   if (doCaseInsensitive)
     docPath = docPath.toLowerCase();
@@ -611,7 +610,7 @@ function MakeRelativeUrl(url)
         // UNIX doesn't have volumes, so we must not do this else
         // the first directory will be misinterpreted as a volume name.
         if (firstDirTest && docScheme == "file" &&
-            AppConstants.platform != "unix")
+            !/unix/.test(navigator.platform))
           return inputUrl;
       }
     }

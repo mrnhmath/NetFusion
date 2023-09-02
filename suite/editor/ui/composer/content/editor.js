@@ -4,7 +4,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 Components.utils.import("resource:///modules/editorUtilities.jsm");
-Components.utils.import("resource://gre/modules/AppConstants.jsm");
 
 /* Main Composer window UI control */
 
@@ -445,7 +444,7 @@ function EditorSharedStartup()
     commandManager.addCommandObserver(gEditorDocumentObserver, "cmd_bold");
   } catch (e) { dump(e); }
 
-  var isMac = AppConstants.platform == "macosx";
+  var isMac = /Mac/.test(navigator.platform);
 
   // Set platform-specific hints for how to select cells
   // Mac uses "Cmd", all others use "Ctrl"

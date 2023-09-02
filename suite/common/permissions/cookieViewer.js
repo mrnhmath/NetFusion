@@ -4,8 +4,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
  
-Components.utils.import("resource://gre/modules/AppConstants.jsm");
-
 var kObserverService;
 
 // interface variables
@@ -306,7 +304,7 @@ function FinalizeCookieDeletions() {
 
 function HandleCookieKeyPress(e) {
   if (e.keyCode == KeyEvent.DOM_VK_DELETE ||
-      (AppConstants.platform == "macosx" &&
+      (/Mac/.test(navigator.platform) &&
        e.keyCode == KeyEvent.DOM_VK_BACK_SPACE)) {
     DeleteCookie();
   }
