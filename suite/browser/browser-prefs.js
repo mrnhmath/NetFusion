@@ -547,7 +547,7 @@ pref("extensions.strictCompatibility", false);
 
 // Specifies a minimum maxVersion an addon needs to say it's compatible with
 // for it to be compatible by default.
-pref("extensions.minCompatibleAppVersion", "2.1");
+pref("extensions.minCompatibleAppVersion", "1.0.0a1");
 
 // Disable add-ons installed into the shared user and shared system areas by
 // default. This does not include the application directory. See the SCOPE
