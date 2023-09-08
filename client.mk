@@ -2,24 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-# Build a comm application (Mozilla calendar, mail or suite).
-#
-# To build a tree,
-#    1. hg clone http://hg.mozilla.org/comm-central comm
-#    2. cd comm
-#    3. python client.py checkout
-#    4. create your .mozconfig file with
-#       ac_add_options --enable-application=suite
-#         (or mail, or calendar)
-#    5. gmake -f client.mk
-#
-# Other targets (gmake -f client.mk [targets...]),
-#    build
-#    clean
-#    distclean
-#
-# See http://developer.mozilla.org/en/Build_Documentation for
-# more information.
+# Build NetFusion.
 #
 # Options:
 #   MOZ_BUILD_PROJECTS   - Build multiple projects in subdirectories
@@ -40,7 +23,7 @@ comma := ,
 
 CWD := $(CURDIR)
 ifneq (1,$(words $(CWD)))
-$(error The mozilla directory cannot be located in a path with spaces.)
+$(error The platform directory cannot be located in a path with spaces.)
 endif
 
 ifeq "$(CWD)" "/"
@@ -449,14 +432,9 @@ cleansrcdir:
 echo-variable-%:
 	@echo $($*)
 
-checkout co: run_client_py
-
-run_client_py:
-	$(PYTHON) $(TOPSRCDIR)/client.py checkout $(CLIENT_PY_ARGS)
-
 # This makefile doesn't support parallel execution. It does pass
 # MOZ_MAKE_FLAGS to sub-make processes, so they will correctly execute
 # in parallel.
 .NOTPARALLEL:
 
-.PHONY: checkout co real_checkout build profiledbuild cleansrcdir pull_all build_all clobber clobber_all pull_and_build_all everything configure preflight_all preflight postflight postflight_all $(OBJDIR_TARGETS)
+.PHONY: real_checkout build profiledbuild cleansrcdir pull_all build_all clobber clobber_all pull_and_build_all everything configure preflight_all preflight postflight postflight_all $(OBJDIR_TARGETS)
