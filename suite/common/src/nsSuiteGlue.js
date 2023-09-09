@@ -203,6 +203,20 @@ SuiteGlue.prototype = {
         this._initialMigrationPerformed = true;
         break;
       case "browser-search-engine-modified":
+        if (data != "engine-default" && data != "engine-current") {
+          break;
+        }
+        // Enforce that the search service's defaultEngine is always equal to
+        // its currentEngine. The search service will notify us any time either
+        // of them are changed (either by directly setting the relevant prefs,
+        // i.e. if add-ons try to change this directly, or if the
+        // nsIBrowserSearchService setters are called).
+        if (Services.search.currentEngine.name == Services.search.defaultEngine.name)
+          return;
+        if (data == "engine-current")
+          Services.search.defaultEngine = Services.search.currentEngine;
+        else
+          Services.search.currentEngine = Services.search.defaultEngine;
         break;
       case "notifications-open-settings":
         // Since this is a web notification, there's probably a browser window.
