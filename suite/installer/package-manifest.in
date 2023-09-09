@@ -186,7 +186,6 @@
 @RESPATH@/components/commuconv.xpt
 @RESPATH@/components/composer.xpt
 @RESPATH@/components/content_events.xpt
-@RESPATH@/components/content_geckomediaplugins.xpt
 @RESPATH@/components/content_html.xpt
 @RESPATH@/components/content_xslt.xpt
 @RESPATH@/components/cookie.xpt
