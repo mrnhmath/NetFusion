@@ -104,47 +104,6 @@ html|a {
   display: none;
 }
 
-.submitStatus div {
-  min-height: 19px; /* height of biggest line (with throbber) */
-}
-
-.submitComment {
-  width: 340px;
-  height: 70px;
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  resize: none;
-  font-family: inherit;
-  font-size: inherit;
-}
-
-.submitURLOptInBox {
-  text-align: start;
-}
-
-.submitURLOptIn {
-  margin-left: -1px;
-}
-
-.mainBox[chromedir="rtl"] .submitURLOptIn {
-  margin-left: 0;
-  margin-right: -1px;
-}
-
-.submitButtonBox {
-  margin-top: 7px;
-}
-
-.submitButton {
-  float: right;
-}
-
-.mainBox[chromedir="rtl"] .submitButton {
-  float: left;
-}
-
-
 .helpIcon {
   float: left;
   display: inline-block;

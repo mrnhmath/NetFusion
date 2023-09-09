@@ -192,11 +192,6 @@ else
 endif
 endif
 
-ifdef MOZ_CRASHREPORTER
-libs:: $(call MERGE_FILE,crashreporter/crashreporter-override.ini)
-	$(SYSINSTALL) $(IFLAGS1) $^ $(FINAL_TARGET)
-endif
-
 ident:
 	@printf 'comm_revision '
 	@$(PYTHON) $(MOZILLA_SRCDIR)/config/printconfigsetting.py \

@@ -130,7 +130,6 @@ chrome/icons/default/venkman-window.ico
 @DIR_MACOS@components/@DLL_PREFIX@chrome@DLL_SUFFIX@
 @DIR_MACOS@components/components.list
 @DIR_MACOS@components/compreg.dat
-@DIR_MACOS@components/crashreporter.xpt
 @DIR_MACOS@components/downloadmanager.xpt
 @DIR_MACOS@components/jsdservice.xpt
 @DIR_MACOS@components/@DLL_PREFIX@intlapp@DLL_SUFFIX@
@@ -206,14 +205,6 @@ components/nsIQTScriptablePlugin.xpt
 @DIR_MACOS@d3dx9_43.dll
 #ifdef UNIX_BUT_NOT_MAC
 components/nsFilePicker.js
-#endif
-#ifndef MOZ_CRASHREPORTER
-#ifdef XP_MACOSX
-@DIR_MACOS@crashreporter.app/
-#else
-@DIR_MACOS@crashreporter@BIN_SUFFIX@
-@DIR_MACOS@crashreporter.ini
-#endif
 #endif
 @DIR_MACOS@defaults/pref/reporter.js
 @DIR_MACOS@defaults/profile/localstore.rdf
@@ -532,11 +523,9 @@ regxpcom.exe
 @DIR_MACOS@searchplugins/zoznam-sk.png
 @DIR_MACOS@searchplugins/zoznam-sk.src
 @DIR_MACOS@@DLL_PREFIX@sqlite3@DLL_SUFFIX@
-#ifndef MOZ_CRASHREPORTER
 #ifdef XP_UNIX
 #ifndef XP_MACOSX
 Throbber-small.gif
-#endif
 #endif
 #endif
 #ifndef MOZ_UPDATER

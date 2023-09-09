@@ -13,7 +13,3 @@
 <!ENTITY prefCheckDefault.caption         "System Integration">
 <!ENTITY prefCheckDefaultClient.label     "Check default application settings on startup">
 <!ENTITY prefCheckDefaultClient.accesskey "C">
-
-<!ENTITY crashReports.caption             "Crash Reporter">
-<!ENTITY submitCrashes.label              "Submit crash reports">
-<!ENTITY submitCrashes.accesskey          "S">

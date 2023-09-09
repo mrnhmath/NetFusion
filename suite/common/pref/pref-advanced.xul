@@ -39,13 +39,5 @@
                 accesskey="&prefCheckDefaultClient.accesskey;"
                 preference="shell.checkDefaultClient"/>
     </groupbox>
-
-    <groupbox id="crashReports" hidden="true">
-      <caption id="crashReportsCaption" label="&crashReports.caption;"/>
-      <checkbox id="submitCrashes"
-                label="&submitCrashes.label;"
-                accesskey="&submitCrashes.accesskey;"
-                oncommand="updateSubmitCrashes(this.checked);"/>
-    </groupbox>
   </prefpane>
 </overlay>

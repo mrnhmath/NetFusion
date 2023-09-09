@@ -741,9 +741,6 @@ pref("layout.word_select.stop_at_punctuation", false);
 #endif
 #endif
 
-// The breakpad report server to link to in about:crashes
-pref("breakpad.reportURL", "");
-
 // Name of alternate about: page for certificate errors (when undefined, defaults to about:neterror)
 pref("security.alternate_certificate_error_page", "certerror");
 pref("security.warn_entering_secure", false);

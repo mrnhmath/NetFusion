@@ -87,11 +87,6 @@ Components.utils.import("resource://gre/modules/NetUtil.jsm");
 // debug.js adds NS_ASSERT. cf. bug 669196
 Components.utils.import("resource://gre/modules/debug.js");
 
-#ifdef MOZ_CRASH_REPORTER
-XPCOMUtils.defineLazyServiceGetter(this, "CrashReporter",
-  "@mozilla.org/xre/app-info;1", "nsICrashReporter");
-#endif
-
 XPCOMUtils.defineLazyServiceGetter(this, "SecMan",
   "@mozilla.org/scriptsecuritymanager;1", "nsIScriptSecurityManager");
 XPCOMUtils.defineLazyServiceGetter(this, "gScreenManager",
@@ -752,8 +747,6 @@ SessionStoreService.prototype = {
     if (!aNoNotification) {
       this.saveStateDelayed(aWindow);
     }
-
-    this._updateCrashReportURL(aWindow);
   },
 
   /**
@@ -846,9 +839,6 @@ SessionStoreService.prototype = {
 
     delete aBrowser.__SS_data;
     this.saveStateDelayed(aWindow);
-
-    // attempt to update the current URL we send in a crash report
-    this._updateCrashReportURL(aWindow);
   },
 
   /**
@@ -878,9 +868,6 @@ SessionStoreService.prototype = {
       if (tab.linkedBrowser.__SS_restoreState &&
           tab.linkedBrowser.__SS_restoreState == TAB_STATE_NEEDS_RESTORE)
         this.restoreTab(tab);
-
-      // attempt to update the current URL we send in a crash report
-      this._updateCrashReportURL(aWindow);
     }
   },
 
@@ -3493,29 +3480,6 @@ SessionStoreService.prototype = {
    */
   _getURIFromString: function sss_getURIFromString(aString) {
     return Services.io.newURI(aString, null, null);
-  },
-
-  /**
-   * Annotate a breakpad crash report with the currently selected tab's URL.
-   */
-  _updateCrashReportURL: function sss_updateCrashReportURL(aWindow) {
-#ifdef MOZ_CRASH_REPORTER
-    try {
-      var currentURI = aWindow.getBrowser().currentURI.clone();
-      // if the current URI contains a username/password, remove it
-      try {
-        currentURI.userPass = "";
-      }
-      catch (ex) { } // ignore failures on about: URIs
-
-      CrashReporter.annotateCrashReport("URL", currentURI.spec);
-    }
-    catch (ex) {
-      // don't make noise when crashreporter is built but not enabled
-      if (ex.result != Components.results.NS_ERROR_NOT_INITIALIZED)
-        debug(ex);
-    }
-#endif
   },
 
   /**

@@ -709,27 +709,6 @@ bin/libfreebl_32int64_3.so
 #endif
 #endif
 
-; [Crash Reporter]
-;
-#ifdef MOZ_CRASHREPORTER
-@RESPATH@/components/CrashService.manifest
-@RESPATH@/components/CrashService.js
-@RESPATH@/components/toolkit_crashservice.xpt
-#ifdef XP_MACOSX
-@BINPATH@/crashreporter.app/
-#else
-@BINPATH@/crashreporter@BIN_SUFFIX@
-@RESPATH@/crashreporter.ini
-#ifdef XP_UNIX
-@RESPATH@/Throbber-small.gif
-#endif
-#endif
-@RESPATH@/crashreporter-override.ini
-#ifdef MOZ_CRASHREPORTER_INJECTOR
-@BINPATH@/breakpadinjector.dll
-#endif
-#endif
-
 [mail]
 ; MailNews component xpts
 @RESPATH@/components/addrbook.xpt

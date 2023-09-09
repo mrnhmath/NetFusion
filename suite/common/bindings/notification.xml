@@ -893,29 +893,6 @@
         </body>
       </method>
 
-      <!-- Callback for user clicking "submit a report" link -->
-      <method name="submitReport">
-        <parameter name="pluginDumpID"/>
-        <parameter name="browserDumpID"/>
-        <parameter name="plugin"/>
-        <body>
-          <![CDATA[
-            var keyVals = {};
-            if (plugin) {
-              let userComment = this.getPluginUI(plugin, "submitComment").value.trim();
-              if (userComment)
-                keyVals.PluginUserComment = userComment;
-              if (this.getPluginUI(plugin, "submitURLOptIn").checked)
-                keyVals.PluginContentURL = plugin.ownerDocument.URL;
-            }
-            this.CrashSubmit.submit(pluginDumpID, { extraExtraKeyVals: keyVals,
-                                                    recordSubmission: true });
-            if (browserDumpID)
-              this.CrashSubmit.submit(browserDumpID);
-          ]]>
-        </body>
-      </method>
-
       <!-- Callback for user clicking a "reload page" link -->
       <method name="reloadPage">
         <parameter name="flags"/>
@@ -951,8 +928,6 @@
             var priority = this.PRIORITY_WARNING_MEDIUM;
             var reloadLabel = this._stringBundle.GetStringFromName("crashedpluginsMessage.reloadButton.label");
             var reloadKey   = this._stringBundle.GetStringFromName("crashedpluginsMessage.reloadButton.accesskey");
-            var submitLabel = this._stringBundle.GetStringFromName("crashedpluginsMessage.submitButton.label");
-            var submitKey   = this._stringBundle.GetStringFromName("crashedpluginsMessage.submitButton.accesskey");
 
             var buttons = [{
               label: reloadLabel,
@@ -960,16 +935,6 @@
               popup: null,
               callback: this.reloadPage.bind(this)
             }];
-
-            if (this.CrashSubmit && pluginDumpID) {
-              let submitButton = {
-                label: submitLabel,
-                accessKey: submitKey,
-                popup: null,
-                callback: this.submitReport.bind(this, pluginDumpID, browserDumpID)
-              };
-              buttons.push(submitButton);
-            }
 
             var notification = this.appendNotification(messageString, "plugin-crashed",
                                                        null, priority, buttons);
@@ -1895,9 +1860,6 @@
           this._prefs.addObserver("dom.disable_open_during_load", this, false);
 
           this.addProgressListener();
-
-          if ("nsICrashReporter" in Components.interfaces)
-            Components.utils.import("resource://gre/modules/CrashSubmit.jsm", this);
         ]]>
       </constructor>
 
@@ -2147,9 +2109,6 @@
           if (!(detail instanceof Components.interfaces.nsIPropertyBag2))
             return;
 
-          var submittedReport = detail.getPropertyAsBool("submittedCrashReport");
-          var doPrompt        = true; // XXX followup for .getPropertyAsBool("doPrompt");
-          var submitReports   = true; // XXX followup for .getPropertyAsBool("submitReports");
           var pluginName      = detail.getPropertyAsAString("pluginName");
           var pluginFilename  = detail.getPropertyAsAString("pluginFilename");
           var pluginDumpID    = detail.getPropertyAsAString("pluginDumpID");
@@ -2163,73 +2122,6 @@
 
           // Configure the crashed-plugin placeholder.
           var overlay = this.getPluginUI(plugin, "main");
-
-          var status;
-          var statusDiv = this.getPluginUI(plugin, "submitStatus");
-
-          if (this.CrashSubmit) {
-            // Determine which message to show regarding crash reports.
-            if (submittedReport) { // submitReports && !doPrompt, handled in observer
-              status = "submitted";
-            }
-            else if (!submitReports && !doPrompt) {
-              status = "noSubmit";
-            }
-            else { // doPrompt
-              status = "please";
-              this.getPluginUI(plugin, "submitButton").addEventListener("click",
-                function (event) {
-                  if (event.button != 0 || !event.isTrusted)
-                    return;
-                  this.submitReport(pluginDumpID, browserDumpID, plugin);
-                  this._prefs.setBoolPref("dom.ipc.plugins.reportCrashURL", optInCB.checked);
-                }.bind(this));
-                let optInCB = this.getPluginUI(plugin, "submitURLOptIn");
-                optInCB.checked = this._prefs.getBoolPref("dom.ipc.plugins.reportCrashURL");
-            }
-
-            // If we're showing the link to manually trigger report submission, we'll
-            // want to be able to update all the instances of the UI for this crash to
-            // show an updated message when a report is submitted.
-            if (doPrompt) {
-              let observer = {
-                QueryInterface: XPCOMUtils.generateQI([Components.interfaces.nsIObserver,
-                                                       Components.interfaces.nsISupportsWeakReference]),
-                observe: function(subject, topic, data) {
-                  let propertyBag = subject;
-                  if (!(propertyBag instanceof Components.interfaces.nsIPropertyBag2))
-                    return;
-                  // Ignore notifications for other crashes.
-                  if (propertyBag.get("minidumpID") != pluginDumpID)
-                    return;
-                  statusDiv.setAttribute("status", data);
-                },
-
-                handleEvent : function(event) {
-                  // Not expected to be called, just here for the closure.
-                }
-              }
-
-              // Use a weak reference, so we don't have to remove it...
-              Components.classes["@mozilla.org/observer-service;1"]
-                        .getService(Components.interfaces.nsIObserverService)
-                        .addObserver(observer, "crash-report-status", true);
-              // ...alas, now we need something to hold a strong reference to prevent
-              // it from being GC. But I don't want to manually manage the reference's
-              // lifetime (which should be no greater than the page).
-              // Clever solution? Use a closure with an event listener on the statusDiv.
-              // When it goes away, so do the listener references and the closure.
-              statusDiv.addEventListener("mozCleverClosureHack", observer, false);
-            }
-          }
-
-          // If we don't have a minidumpID, we can't (or didn't) submit anything.
-          // This can happen if the plugin is killed from the task manager.
-          if (!pluginDumpID) {
-            status = "noReport";
-          }
-
-          statusDiv.setAttribute("status", status);
 
           var helpIcon = this.getPluginUI(plugin, "helpIcon");
           this.addLinkClickCallback(helpIcon, this.openHelpPage);
@@ -2245,11 +2137,7 @@
 
           // Is the <object>'s size too small to hold what we want to show?
           if (this.isTooSmall(plugin, overlay)) {
-            // Try hiding the comment box and related report submission UI.
-            statusDiv.removeAttribute("status");
-
-            if (this.isTooSmall(plugin, overlay))
-              isShowing = false;
+            isShowing = false;
           }
 
           if (isShowing) {
@@ -2260,13 +2148,11 @@
             var notification = this.getNotificationWithValue("plugin-crashed");
             if (notification)
               this.removeNotification(notification, true);
-            this.crashNotified = true;
           } else {
             overlay.classList.remove("visible");
             // If another plugin on the page was large enough to show our UI, we don't
             // want to show a notification bar.
-            if (!this.crashNotified)
-              this.showPluginCrashedNotification(pluginDumpID, browserDumpID, messageString);
+            this.showPluginCrashedNotification(pluginDumpID, browserDumpID, messageString);
           }
         ]]>
       </handler>

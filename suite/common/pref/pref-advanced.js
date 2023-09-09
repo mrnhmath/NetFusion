@@ -7,7 +7,6 @@ function Startup()
 {
   SysPrefCheck();
   ShellServiceCheck();
-  CrashReportsCheck();
 }
 
 /**
@@ -33,22 +32,4 @@ function ShellServiceCheck()
     document.getElementById("checkDefault").hidden = false;
   } catch (e) {
   }
-}
-
-function CrashReportsCheck()
-{
-  if ("nsICrashReporter" in Components.interfaces)
-  {
-    var cr = Components.classes["@mozilla.org/toolkit/crash-reporter;1"]
-                       .getService(Components.interfaces.nsICrashReporter);
-    document.getElementById("crashReports").hidden = !cr.enabled;
-    document.getElementById("submitCrashes").checked = cr.submitReports;
-  }
-}
-
-function updateSubmitCrashes(aChecked)
-{
-  Components.classes["@mozilla.org/toolkit/crash-reporter;1"]
-            .getService(Components.interfaces.nsICrashReporter)
-            .submitReports = aChecked;
 }
