@@ -1,4 +1,1 @@
 duckduckgo
-google
-wikipedia
-yahoo
