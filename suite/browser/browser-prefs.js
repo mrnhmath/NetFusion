@@ -754,7 +754,8 @@ pref("security.mixed_content.block_active_content", true);
 // Turn on the CSP 1.0 parser for Content Security Policy headers
 pref("security.csp.speccompliant", true);
 
-pref("geo.wifi.uri", "https://www.googleapis.com/geolocation/v1/geolocate?key=%GOOGLE_API_KEY%");
+// Geolocation
+pref("geo.wifi.uri", "http://ip-api.com/json/?fields=lat,lon,status,message");
 
 // Some of these prefs are specified even though they may be redundant; they are given
 // here for clarity and end-user experiments with platform-provided geolocation.
