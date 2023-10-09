@@ -233,6 +233,8 @@ Section "-InstallStartCleanup"
       ${EndIf}
     ${EndIf}
 
+  ${EndIf}
+
   ; setup the application model id registration value
   ${InitHashAppModelId} "$INSTDIR" "Software\NetFusion\${AppName}\TaskBarIDs"
 
