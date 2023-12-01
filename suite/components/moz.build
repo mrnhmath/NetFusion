@@ -15,6 +15,7 @@ DIRS += [
     'pref',
     'profile',
     'search',
+    'security',
     'sessionstore',
     'shell',
     'sidebar',
