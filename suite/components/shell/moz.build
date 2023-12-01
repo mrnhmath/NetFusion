@@ -3,6 +3,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+XPIDL_SOURCES += [
+    'nsIShellService.idl',
+]
+
+if CONFIG['OS_ARCH'] == 'WINNT':
+    XPIDL_SOURCES += [
+        'nsIWindowsShellService.idl',
+    ]
+
+XPIDL_MODULE = 'shellservice'
+
 if CONFIG['OS_ARCH'] == 'WINNT':
     SOURCES += ['nsWindowsShellService.cpp']
     OS_LIBS += [
@@ -25,3 +36,5 @@ if SOURCES:
 FINAL_LIBRARY = 'suite'
 
 CXXFLAGS += CONFIG['TK_CFLAGS']
+
+JAR_MANIFESTS += ['jar.mn']
