@@ -1,0 +1,49 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+DIRS += [
+    'bindings',
+    'bookmarks',
+    'directory',
+    'downloads',
+    'feeds',
+    'helpviewer',
+    'history',
+    'permissions',
+    'places',
+    'pref',
+    'profile',
+    'search',
+    'sessionstore',
+    'sidebar',
+]
+
+# build is always last as it adds the local includes from the other components.
+DIRS += [
+    'build',
+]
+
+BROWSER_CHROME_MANIFESTS += [
+    'tests/browser/browser.ini',
+]
+
+MOCHITEST_CHROME_MANIFESTS += [
+    'tests/chrome/chrome.ini',
+]
+
+XPIDL_SOURCES += [
+    'nsISuiteGlue.idl',
+]
+
+XPIDL_MODULE = 'suitecomponents'
+
+EXTRA_COMPONENTS += [
+    'nsAbout.js',
+    'nsGopherProtocolStubHandler.js',
+    'SuiteComponents.manifest',
+]
+
+EXTRA_PP_COMPONENTS += [
+    'nsSuiteGlue.js',
+]

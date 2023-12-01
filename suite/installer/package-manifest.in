@@ -308,11 +308,16 @@
 @RESPATH@/components/storage.xpt
 @RESPATH@/components/@DLL_PREFIX@suite@DLL_SUFFIX@
 @RESPATH@/components/SuiteBrowser.manifest
-@RESPATH@/components/suitecommon.xpt
-@RESPATH@/components/SuiteCommon.manifest
+@RESPATH@/components/suitecomponents.xpt
+@RESPATH@/components/SuiteComponents.manifest
+@RESPATH@/components/suitedownloadmanagerui.xpt
+@RESPATH@/components/SuiteDownloadManagerUI.manifest
 @RESPATH@/components/suitefeeds.xpt
 @RESPATH@/components/SuiteFeeds.manifest
 @RESPATH@/components/suitemigration.xpt
+@RESPATH@/components/suitesessionstore.xpt
+@RESPATH@/components/suitesidebar.xpt
+@RESPATH@/components/SuiteSidebar.manifest
 @RESPATH@/components/toolkit_asyncshutdown.xpt
 @RESPATH@/components/toolkit_filewatcher.xpt
 @RESPATH@/components/toolkit_finalizationwitness.xpt
@@ -441,6 +446,7 @@
 @RESPATH@/components/nsSearchSuggestions.js
 @RESPATH@/components/nsSessionStartup.js
 @RESPATH@/components/nsSessionStore.js
+@RESPATH@/components/nsSessionStartup.manifest
 @RESPATH@/components/nsSidebar.js
 @RESPATH@/components/nsSuiteDownloadManagerUI.js
 @RESPATH@/components/nsSuiteGlue.js
