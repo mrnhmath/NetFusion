@@ -11,8 +11,7 @@ XPCOMBinaryComponent('suite')
 
 LOCAL_INCLUDES += [
     '../feeds',
-    '/suite/profile',
-    '/suite/profile/migration/src',
+    '../profile',
     '../shell',
 ]
 
