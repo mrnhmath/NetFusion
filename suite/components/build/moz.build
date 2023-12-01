@@ -10,7 +10,7 @@ SOURCES += [
 XPCOMBinaryComponent('suite')
 
 LOCAL_INCLUDES += [
-    '/suite/feeds/src',
+    '../feeds',
     '/suite/profile',
     '/suite/profile/migration/src',
     '../shell',

@@ -9,8 +9,6 @@ DIRS += [
     'base',
     'browser',
     'components',
-    'feeds/public',
-    'feeds/src',
     'locales',
     'mailnews',
     'modules',
