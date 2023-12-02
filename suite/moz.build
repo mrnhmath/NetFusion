@@ -14,7 +14,6 @@ DIRS += [
     'modules',
     'themes/classic',
     'themes/modern',
-    'smile',
 ]
 
 if CONFIG['MAKENSISU']:

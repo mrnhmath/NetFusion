@@ -1293,7 +1293,6 @@ components/xpautoc.dll
 @DIR_MACOS@components/saxparser.xpt
 @DIR_MACOS@components/shellservice.xpt
 @DIR_MACOS@components/shistory.xpt
-@DIR_MACOS@components/smile.xpt
 @DIR_MACOS@components/spellchecker.xpt
 @DIR_MACOS@components/storage.xpt
 @DIR_MACOS@components/suitebrowser.xpt
