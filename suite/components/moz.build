@@ -9,6 +9,7 @@ DIRS += [
     'downloads',
     'feeds',
     'helpviewer',
+    'migration',
     'history',
     'permissions',
     'places',
