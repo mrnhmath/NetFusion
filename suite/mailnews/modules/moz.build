@@ -6,4 +6,3 @@
 EXTRA_JS_MODULES += [
     'MailUtils.js',
 ]
-
