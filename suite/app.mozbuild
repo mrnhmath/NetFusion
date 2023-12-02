@@ -14,9 +14,6 @@ if CONFIG['MOZ_IRC']:
 if CONFIG['MOZ_INSPECTOR']:
     DIRS += ['/extensions/inspector']
 
-if CONFIG['MOZ_COMPOSER']:
-    DIRS += ['/suite/editor/ui']
-
 DIRS += ['/%s' % CONFIG['MOZ_BRANDING_DIRECTORY']]
 
 DIRS += [

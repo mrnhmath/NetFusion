@@ -599,7 +599,7 @@
 ; [Default Preferences]
 ; All the browser/general pref files must be part of base to prevent migration bugs
 @RESPATH@/@PREF_DIR@/browser-prefs.js
-@RESPATH@/@PREF_DIR@/composer.js
+@RESPATH@/@PREF_DIR@/composer-prefs.js
 @RESPATH@/goanna.js
 @RESPATH@/defaults/autoconfig/prefcalls.js
 @RESPATH@/defaults/permissions
