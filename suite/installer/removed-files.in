@@ -678,7 +678,7 @@ Throbber-small.gif
   @DIR_MACOS@components/interfaces.manifest
   @DIR_MACOS@components/mail.xpt
   @DIR_MACOS@defaults/profile/bookmarks.html
-  @DIR_MACOS@defaults/pref/browser-prefs.js
+  @DIR_MACOS@defaults/pref/suite-prefs.js
   @DIR_MACOS@defaults/pref/composer-prefs.js
   @DIR_MACOS@defaults/pref/mailnews.js
   @DIR_MACOS@defaults/pref/mdn.js

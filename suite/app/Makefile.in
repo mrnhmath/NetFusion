@@ -35,6 +35,11 @@ endif
 
 include $(topsrcdir)/config/rules.mk
 
+# channel-prefs.js is handled separate from other prefs due to bug 756325.
+libs:: $(srcdir)/profile/channel-prefs.js
+	$(NSINSTALL) -D $(DIST)/bin/defaults/pref
+	$(call py_action,preprocessor,-Fsubstitution $(PREF_PPFLAGS) $(ACDEFINES) $^ -o $(DIST)/bin/defaults/pref/channel-prefs.js)
+
 libs::
 ifeq ($(OS_ARCH),WINNT)
 	$(EXIT_ON_ERROR) \
@@ -64,7 +69,7 @@ libs:: $(MOZ_APP_NAME).1
 	$(INSTALL) $< $(DIST)/man/man1
 
 GARBAGE += $(MOZ_APP_NAME).1
-GARBAGE += $(addprefix $(DIST)/bin/defaults/pref/, browser-prefs.js)
+GARBAGE += $(addprefix $(FINAL_TARGET)/defaults/pref/, all.js mailnews.js suite-prefs.js)
 endif
 
 ifeq ($(MOZ_PACKAGER_FORMAT),omni)

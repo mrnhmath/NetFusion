@@ -38,6 +38,10 @@ if CONFIG['MOZ_LINKER']:
 
 DEFINES['APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
 
+JS_PREFERENCE_PP_FILES += [
+    'profile/suite-prefs.js',
+]
+
 DISABLE_STL_WRAPPING = True
 
 FINAL_TARGET_FILES.defaults += ['permissions']
