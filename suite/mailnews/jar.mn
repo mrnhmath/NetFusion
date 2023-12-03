@@ -68,6 +68,12 @@ messenger.jar:
     content/messenger/msgFolderPickerOverlay.xul                               (content/msgFolderPickerOverlay.xul)
     content/messenger/start.xhtml                                              (content/start.xhtml)
     content/messenger/messengerdnd.js                                          (content/messengerdnd.js)
+    content/messenger/SearchDialog.xul                                         (content/SearchDialog.xul)
+    content/messenger/SearchDialog.js                                          (content/SearchDialog.js)
+    content/messenger/ABSearchDialog.xul                                       (content/ABSearchDialog.xul)
+    content/messenger/ABSearchDialog.js                                        (content/ABSearchDialog.js)
+    content/messenger/FilterListDialog.xul                                     (content/FilterListDialog.xul)
+    content/messenger/FilterListDialog.js                                      (content/FilterListDialog.js)
 #ifdef XP_MACOSX
     content/messenger/platformMailnewsOverlay.xul                              (content/mac/platformMailnewsOverlay.xul)
 #else
