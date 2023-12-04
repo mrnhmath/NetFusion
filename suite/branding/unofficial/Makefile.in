@@ -11,7 +11,7 @@ include $(topsrcdir)/config/rules.mk
 export::
 	$(NSINSTALL) -D $(DIST)/branding
 ifeq ($(OS_ARCH),WINNT)
-	cp $(srcdir)/icons/windows/netfusion.ico      $(DIST)/branding/netfusion.ico
+	cp $(srcdir)/icons/windows/main-window.ico    $(DIST)/branding/main-window.ico
 	cp $(srcdir)/icons/windows/html-file.ico      $(DIST)/branding/html-file.ico
 	cp $(srcdir)/package/windows/branding.nsi     $(DIST)/branding/branding.nsi
 	cp $(srcdir)/package/windows/wizHeader.bmp    $(DIST)/branding/wizHeader.bmp
@@ -22,7 +22,7 @@ ifeq (cocoa,$(MOZ_WIDGET_TOOLKIT))
 	$(NSINSTALL) -D $(DIST)/branding
 	$(NSINSTALL) -D $(DIST)/branding/icons
 	cp $(srcdir)/icons/mac/document.icns          $(DIST)/branding/icons/document.icns
-	cp $(srcdir)/icons/mac/suite.icns             $(DIST)/branding/icons/suite.icns
+	cp $(srcdir)/icons/mac/netfusion.icns         $(DIST)/branding/icons/netfusion.icns
 	cp $(srcdir)/package/mac/dsstore              $(DIST)/branding/dsstore
 	cp $(srcdir)/package/mac/background.png       $(DIST)/branding/background.png
 	cp $(srcdir)/package/mac/disk.icns            $(DIST)/branding/disk.icns

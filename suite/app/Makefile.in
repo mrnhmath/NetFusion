@@ -5,7 +5,7 @@
 AB_CD = $(MOZ_UI_LOCALE) 
 
 DEFINES += \
-	-DNETFUSION_ICO=\"$(DIST)/branding/netfusion.ico\" \
+	-DNETFUSION_ICO=\"$(DIST)/branding/main-window.ico\" \
 	-DHTML_FILE_ICO=\"$(DIST)/branding/html-file.ico\" \
 	$(NULL)
 

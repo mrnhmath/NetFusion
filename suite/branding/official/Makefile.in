@@ -11,7 +11,7 @@ include $(topsrcdir)/config/rules.mk
 export::
 	$(NSINSTALL) -D $(DIST)/branding
 ifeq ($(OS_ARCH),WINNT)
-	cp $(srcdir)/icons/windows/netfusion.ico      $(DIST)/branding/netfusion.ico
+	cp $(srcdir)/icons/windows/main-window.ico    $(DIST)/branding/main-window.ico
 	cp $(srcdir)/icons/windows/html-file.ico      $(DIST)/branding/html-file.ico
 	cp $(srcdir)/package/windows/branding.nsi     $(DIST)/branding/branding.nsi
 	cp $(srcdir)/package/windows/wizHeader.bmp    $(DIST)/branding/wizHeader.bmp
