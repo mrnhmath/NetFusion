@@ -45,7 +45,6 @@ comm.jar:
 % content communicator-region %content/communicator-region/
    content/communicator/about.js                                    (content/about.js)
    content/communicator/about.xhtml                                 (content/about.xhtml)
-   content/communicator/aboutLife.xhtml                             (content/aboutLife.xhtml)
    content/communicator/aboutPrivateBrowsing.css                    (content/aboutPrivateBrowsing.css)
    content/communicator/aboutPrivateBrowsing.js                     (content/aboutPrivateBrowsing.js)
    content/communicator/aboutPrivateBrowsing.xul                    (content/aboutPrivateBrowsing.xul)

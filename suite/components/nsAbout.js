@@ -18,8 +18,6 @@ About.prototype = {
   certerrorURI: "chrome://communicator/content/certError.xhtml",
   feedsFlags: SCRIPT | UNTRUSTED | HIDE,
   feedsURI: "chrome://communicator/content/feeds/subscribe.xhtml",
-  lifeFlags: SCRIPT | UNTRUSTED | HIDE,
-  lifeURI: "chrome://communicator/content/aboutLife.xhtml",
   privatebrowsingFlags: SCRIPT,
   privatebrowsingURI: "chrome://communicator/content/aboutPrivateBrowsing.xul",
   rightsFlags: SCRIPT | UNTRUSTED,

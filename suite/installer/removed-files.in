@@ -603,7 +603,6 @@ Throbber-small.gif
   @DIR_MACOS@components/nsAboutCertError.js
   @DIR_MACOS@components/nsAboutData.js
   @DIR_MACOS@components/nsAboutFeeds.js
-  @DIR_MACOS@components/nsAboutLife.js
   @DIR_MACOS@components/nsAboutRights.js
   @DIR_MACOS@components/nsAboutSessionRestore.js
   @DIR_MACOS@components/nsBadCertHandler.js
