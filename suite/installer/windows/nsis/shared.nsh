@@ -767,29 +767,9 @@
 ; Removes various registry entries for reasons noted below (does not use SHCTX).
 !macro RemoveDeprecatedKeys
   StrCpy $0 "SOFTWARE\Classes"
-  ; Remove support for launching gopher urls from the shell during install or
-  ; update if the DefaultIcon is from netfusion.exe.
-  ${RegCleanAppHandler} "gopher"
-  
   ; Remove support for launching chrome urls from the shell during install or
   ; update if the DefaultIcon is from netfusion.exe (Bug 301073).
   ${RegCleanAppHandler} "chrome"
-  
-  ; Delete gopher from Capabilities\URLAssociations if it is present.
-  ${StrFilter} "${FileMainEXE}" "+" "" "" $R9
-  StrCpy $0 "Software\Clients\StartMenuInternet\$R9"
-  ClearErrors
-  ReadRegStr $2 HKLM "$0\Capabilities\URLAssociations" "gopher"
-  ${Unless} ${Errors}
-    DeleteRegValue HKLM "$0\Capabilities\URLAssociations" "gopher"
-  ${EndUnless}
-
-  ; Delete gopher from the user's UrlAssociations if it points to NetFusionURL.
-  StrCpy $0 "Software\Microsoft\Windows\Shell\Associations\UrlAssociations\gopher"
-  ReadRegStr $2 HKCU "$0\UserChoice" "Progid"
-  ${If} "$2" == "NetFusionURL"
-    DeleteRegKey HKCU "$0"
-  ${EndIf}
 !macroend
 !define RemoveDeprecatedKeys "!insertmacro RemoveDeprecatedKeys"
 

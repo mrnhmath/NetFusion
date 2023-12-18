@@ -43,7 +43,6 @@ XPIDL_MODULE = 'suitecomponents'
 
 EXTRA_COMPONENTS += [
     'nsAbout.js',
-    'nsGopherProtocolStubHandler.js',
     'SuiteComponents.manifest',
 ]
 

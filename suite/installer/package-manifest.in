@@ -424,7 +424,6 @@
 @RESPATH@/components/nsFormAutoComplete.js
 @RESPATH@/components/nsFormHistory.js
 @RESPATH@/components/FormHistoryStartup.js
-@RESPATH@/components/nsGopherProtocolStubHandler.js
 @RESPATH@/components/nsHandlerService.js
 @RESPATH@/components/nsHandlerService.manifest
 @RESPATH@/components/nsHelperAppDlg.js

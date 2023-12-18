@@ -8,8 +8,6 @@ contract @mozilla.org/network/protocol/about;1?what=life {d54f2c89-8fd6-4eeb-a7a
 contract @mozilla.org/network/protocol/about;1?what=privatebrowsing {d54f2c89-8fd6-4eeb-a7a4-51d4dcdf460f}
 contract @mozilla.org/network/protocol/about;1?what=rights {d54f2c89-8fd6-4eeb-a7a4-51d4dcdf460f}
 contract @mozilla.org/network/protocol/about;1?what=sessionrestore {d54f2c89-8fd6-4eeb-a7a4-51d4dcdf460f}
-component {22042bdb-56e4-47c6-8b12-fdfa859c05a9} nsGopherProtocolStubHandler.js
-contract @mozilla.org/network/protocol;1?name=gopher {22042bdb-56e4-47c6-8b12-fdfa859c05a9}
 component {bbbbe845-5a1b-40ee-813c-f84b8faaa07c} nsSuiteGlue.js
 contract @mozilla.org/suite/suiteglue;1 {bbbbe845-5a1b-40ee-813c-f84b8faaa07c}
 category app-startup nsSuiteGlue service,@mozilla.org/suite/suiteglue;1

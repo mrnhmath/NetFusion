@@ -387,16 +387,6 @@ regxpcom.exe
 @DIR_MACOS@res/unixcharset.properties
 @DIR_MACOS@res/viewsource.css
 @DIR_MACOS@res/wincharset.properties
-@DIR_MACOS@res/html/gopher-audio.gif
-@DIR_MACOS@res/html/gopher-binary.gif
-@DIR_MACOS@res/html/gopher-find.gif
-@DIR_MACOS@res/html/gopher-image.gif
-@DIR_MACOS@res/html/gopher-menu.gif
-@DIR_MACOS@res/html/gopher-movie.gif
-@DIR_MACOS@res/html/gopher-sound.gif
-@DIR_MACOS@res/html/gopher-telnet.gif
-@DIR_MACOS@res/html/gopher-text.gif
-@DIR_MACOS@res/html/gopher-unknown.gif
 @DIR_MACOS@searchplugins/
 @DIR_MACOS@searchplugins/allegro.png
 @DIR_MACOS@searchplugins/allegro.src
