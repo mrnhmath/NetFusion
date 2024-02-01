@@ -11,6 +11,10 @@ EXTRA_JS_MODULES += [
     'WindowsPreviewPerTab.jsm',
 ]
 
+EXTRA_PP_JS_MODULES += [
+    'RecentWindow.jsm',
+]
+
 if CONFIG['OS_ARCH'] == 'WINNT':
     EXTRA_JS_MODULES += ['WindowsJumpLists.jsm']
 
