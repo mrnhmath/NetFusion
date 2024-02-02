@@ -21,6 +21,15 @@
       <preference id="shell.checkDefaultClient"
                   name="shell.checkDefaultClient"
                   type="bool"/>
+#ifdef XP_WIN
+      <preference id="gfx.direct2d.disabled"
+                  name="gfx.direct2d.disabled"
+                  type="bool" inverted="true"/>
+#endif
+      <preference id="layers.acceleration.enabled"
+                  name="layers.acceleration.enabled"
+                  type="bool"
+                  onchange="updateHardwareAcceleration(this.value);"/>
     </preferences>
 
     <groupbox id="systemPrefs">
@@ -39,5 +48,15 @@
                 accesskey="&prefCheckDefaultClient.accesskey;"
                 preference="shell.checkDefaultClient"/>
     </groupbox>
+
+    <groupbox id="hardwareAccelerationGroup" align="start">
+      <caption label="&hardwareAcceleration.label;"/>
+      <label>&restartRequired.label;</label>
+      <checkbox id="allowHWAccel"
+                label="&allowHWAccel.label;"
+                accesskey="&allowHWAccel.accesskey;"
+                preference="layers.acceleration.enabled"/>
+    </groupbox>
+
   </prefpane>
 </overlay>

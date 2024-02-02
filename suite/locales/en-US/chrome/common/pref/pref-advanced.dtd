@@ -13,3 +13,8 @@
 <!ENTITY prefCheckDefault.caption         "System Integration">
 <!ENTITY prefCheckDefaultClient.label     "Check default application settings on startup">
 <!ENTITY prefCheckDefaultClient.accesskey "C">
+
+<!ENTITY hardwareAcceleration.label       "Hardware Acceleration">
+<!ENTITY restartRequired.label            "Changes to these settings require &brandShortName; to be restarted.">
+<!ENTITY allowHWAccel.label               "Use hardware acceleration when available">
+<!ENTITY allowHWAccel.accesskey           "e">

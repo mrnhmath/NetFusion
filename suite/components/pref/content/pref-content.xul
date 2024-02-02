@@ -42,15 +42,6 @@
       <preference id="browser.enable_automatic_image_resizing"
                   name="browser.enable_automatic_image_resizing"
                   type="bool"/>
-#ifdef XP_WIN
-      <preference id="gfx.direct2d.disabled"
-                  name="gfx.direct2d.disabled"
-                  type="bool" inverted="true"/>
-#endif
-      <preference id="layers.acceleration.enabled"
-                  name="layers.acceleration.enabled"
-                  type="bool"
-                  onchange="updateHardwareAcceleration(this.value);"/>
       <preference id="accessibility.blockautorefresh"
                   name="accessibility.blockautorefresh"
                   type="bool"/>
@@ -126,10 +117,6 @@
     </groupbox>
 
     <vbox class="box-padded" align="start">
-      <checkbox id="allowHWAccel"
-                label="&allowHWAccel.label;"
-                accesskey="&allowHWAccel.accesskey;"
-                preference="layers.acceleration.enabled"/>
       <checkbox id="blockAutoRefresh"
                 label="&blockAutoRefresh.label;"
                 accesskey="&blockAutoRefresh.accesskey;"
