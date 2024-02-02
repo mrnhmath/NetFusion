@@ -116,12 +116,13 @@
                 preference="browser.enable_automatic_image_resizing"/>
     </groupbox>
 
-    <vbox class="box-padded" align="start">
+    <groupbox id="accessibilityGroup" align="start">
+      <caption label="&accessibilityPrefs.label;"/>
       <checkbox id="blockAutoRefresh"
                 label="&blockAutoRefresh.label;"
                 accesskey="&blockAutoRefresh.accesskey;"
                 preference="accessibility.blockautorefresh"/>
-    </vbox>
+    </groupbox>
 
   </prefpane>
 </overlay>

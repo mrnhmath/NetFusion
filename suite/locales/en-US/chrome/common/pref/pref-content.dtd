@@ -37,5 +37,6 @@
 <!ENTITY enableAutomaticImageResizing.label     "Resize large images to fit in the browser window">
 <!ENTITY enableAutomaticImageResizing.accesskey "R">
 
+<!ENTITY accessibilityPrefs.label               "Accessibility">
 <!ENTITY blockAutoRefresh.label                 "Warn me when websites try to redirect or reload the page">
 <!ENTITY blockAutoRefresh.accesskey             "W">
