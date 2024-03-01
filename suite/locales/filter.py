@@ -6,7 +6,7 @@ def test(mod, path, entity=None):
   import re
   # ignore anything but SeaMonkey
   if mod not in ("netwerk", "dom", "toolkit", "security/manager",
-                 "editor/ui", "suite"):
+                 "devtools/shared", "editor/ui", "suite"):
     return "ignore"
   # ignore temporary files, hiden files and files from rejects
   if (re.match(r".*?\/[.#].+", path) or

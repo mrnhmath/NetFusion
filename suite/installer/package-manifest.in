@@ -516,6 +516,10 @@
 @RESPATH@/chrome/toolkit@JAREXT@
 @RESPATH@/chrome/toolkit.manifest
 
+; DevTools
+@RESPATH@/chrome/devtools@JAREXT@
+@RESPATH@/chrome/devtools.manifest
+
 ; classic theme
 @RESPATH@/chrome/classic@JAREXT@
 @RESPATH@/chrome/classic.manifest
