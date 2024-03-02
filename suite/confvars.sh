@@ -53,9 +53,8 @@ if test "$MOZ_WIDGET_TOOLKIT" = "windows" -o \
   MOZ_BUNDLED_FONTS=1
 fi
 
-# Don't include DevTools
+# Don't include the DevTools client
 MOZ_DEVTOOLS=
-MOZ_DEVTOOLS_SERVER=
 
 # Short-circuit Sync
 MOZ_SERVICES_SYNC=
